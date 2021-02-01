@@ -1,80 +1,221 @@
 // core
 import Link from 'next/link'
 
-// styles
-import styles from './HeaderBottom.module.scss'
+// libs
+import styled from 'styled-components'
+
+// utils
+import { vars } from '../../../styles/vars'
 
 // icons
 import BurgerIcon from '../../SVG/BurgerIcon'
 import AccountIcon from '../../SVG/AccountIcon'
 
+// components
+import { Container } from './../../UI/Container/Container'
+
 const HeaderBottom = () => {
     return (
-        <div className={styles.header__bottomWrap}>
-            <div className='container'>
-                <div className={styles.headder__bottomInner}>
+        <StyledWrapper>
+            <Container>
+                <StyledInner>
 
-                    <div className={styles.header__menuBtnWrapp}>
-                        <button className={styles.header__menuBtn} type='button'>
+                    <StyledMenuBtnWrap>
+                        <StyledMenuBtn type='button'>
                             <BurgerIcon />
                             <span>Каталог товаров</span>
-                        </button>
-                    </div>
+                        </StyledMenuBtn>
+                    </StyledMenuBtnWrap>
 
-                    <nav className={styles.menu}>
-                        <ul className={styles.menu__list}>
-                            <li className={styles.menu__item}>
-                                <Link href='/'>
-                                    <a className={styles.menu__link}>Главная</a>
-                                </Link>
-                            </li>
+                    <StyledMenu>
+                        <StyledMenuList>
+                            <StyledMenuItem>
+                                <Link href='/'><a>Главная</a></Link>
+                            </StyledMenuItem>
 
-                            <li className={styles.menu__item}>
-                                <Link href='/discounts'>
-                                    <a className={styles.menu__link}>Скидки</a>
-                                </Link>
-                            </li>
+                            <StyledMenuItem>
+                                <Link href='/discounts'><a>Скидки</a></Link>
+                            </StyledMenuItem>
 
-                            <li className={styles.menu__item}>
-                                <Link href='/new-products'>
-                                    <a className={styles.menu__link}>Новинки</a>
-                                </Link>
-                            </li>
+                            <StyledMenuItem>
+                                <Link href='/new-products'><a>Новинки</a></Link>
+                            </StyledMenuItem>
 
-                            <li className={styles.menu__item}>
-                                <Link href='/brands'>
-                                    <a className={styles.menu__link}>Бренды</a>
-                                </Link>
-                            </li>
+                            <StyledMenuItem>
+                                <Link href='/brands'><a>Бренды</a></Link>
+                            </StyledMenuItem>
 
-                            <li className={styles.menu__item}>
-                                <Link href='/blog'>
-                                    <a className={styles.menu__link}>Блог</a>
-                                </Link>
-                            </li>
+                            <StyledMenuItem>
+                                <Link href='/blog'><a>Блог</a></Link>
+                            </StyledMenuItem>
 
-                            <li className={styles.menu__item}>
-                                <Link href='/promotions'>
-                                    <a className={styles.menu__link}>Акции</a>
-                                </Link>
-                            </li>
-                        </ul>
-                    </nav>
+                            <StyledMenuItem>
+                                <Link href='/promotions'><a>Акции</a></Link>
+                            </StyledMenuItem>
+                        </StyledMenuList>
+                    </StyledMenu>
 
-                    <div className={styles.header__loginWrap}>
+                    <StyledLoginWrap>
                         <Link href='/auth'>
-                            <a className={styles.header__login}>
+                            <StyledLogin>
                                 <AccountIcon />
                                 <span>Вход/Регистрация</span>
-                            </a>
+                            </StyledLogin>
                         </Link>
-                    </div>
+                    </StyledLoginWrap>
 
-                </div>
-            </div>
-        </div>
-
+                </StyledInner>
+            </Container>
+        </StyledWrapper>
     )
 }
 
 export default HeaderBottom
+
+// styles
+export const StyledWrapper = styled.div`
+    border: 1px solid #E7E7E7;
+`
+
+export const StyledInner = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 1120px) {
+        display: none;   
+    }
+`
+
+export const StyledMenuBtnWrap = styled.div`
+    width: 100%;
+    max-width: 270px;
+    flex-shrink: 0;
+    border-left: 1px solid #E7E7E7;
+    border-right: 1px solid #E7E7E7;
+`
+
+export const StyledMenuBtn = styled.button`
+    width: 100%;
+    text-align: left;
+    padding: 12px 0px;
+    padding-left: 15px;
+    transition: all .2s linear;
+
+    svg {
+        width: 19px;
+        height: 17px;
+        margin-right: 30px;
+        transition: all .2s linear;
+    }
+
+    span {
+        font-weight: 500;
+        font-size: 18px;
+        color: ${vars.colorBlack};
+        transition: color .2s linear;
+    }
+
+    &:hover {
+        span {
+            color: ${vars.colorGreen};
+        }
+
+        svg {
+            fill: ${vars.colorGreen};        
+        }
+    }
+`
+
+export const StyledMenu = styled.nav`
+    width: 100%;
+    padding: 0px 70px;
+`
+
+export const StyledMenuList = styled.ul`
+    width: 100%;
+    display: flex;
+    align-items: center;
+`
+
+export const StyledMenuItem = styled.li`
+    margin-right: 35px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    a {
+        position: relative;
+        font-weight: normal;
+        font-size: 14px;
+        color: ${vars.colorBlack};
+        padding: 12px 0px;
+        transition: all .2s linear;    
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            border-radius: 10px;
+            background-color: ${vars.colorGreen};
+            opacity: 0;
+            transition: opacity .2s linear;
+        }
+
+        &:hover {
+            color: ${vars.colorGreen};
+
+            &::after {
+                opacity: 1;
+            }
+        }
+
+        &.active {
+            font-weight: bold;
+        }
+    }
+`
+
+export const StyledLoginWrap = styled.div`
+    width: 100%;
+    max-width: 270px;
+    border-left: 1px solid #E7E7E7;
+    border-right: 1px solid #E7E7E7;
+`
+
+export const StyledLogin = styled.a`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 0px;
+
+    svg {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+        transition: all .2s linear;
+    }
+
+    span {
+        font-weight: normal;
+        font-size: 14px;
+        color: ${vars.colorBlack};
+        transition: all .2s linear;
+    }
+
+    &:hover {
+        span {
+            color: ${vars.colorGreen};
+        }
+
+        svg {
+            fill: ${vars.colorGreen};                
+        }
+    }
+`

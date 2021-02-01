@@ -1,50 +1,86 @@
 // core
 import Link from 'next/link'
 
+// libs
+import styled from 'styled-components'
+
 // components
 import Logo from '../../UI/Logo/Logo'
+import { Container } from './../../UI/Container/Container'
 
-// styles
-import styles from './HeaderTop.module.scss'
+// utils
+import { vars } from '../../../styles/vars'
 
 const HeaderTop = () => {
     return (
-        <div className={styles.header__topWrap}>
-            <div className="container">
-                <div className={styles.header__top}>
+        <StyledWrapper>
+            <Container>
+                <StyledInner>
                     <Logo />
 
-                    <ul className={styles.menuInfo}>
-                        <li className={styles.menuInfo__item}>
-                            <Link href="/delivery">
-                                <a className={styles.menuInfo__link}>Доставка и оплата</a>
-                            </Link>
-                        </li>
+                    <StyledMenu>
+                        <StyledMenuItem>
+                            <Link href="/delivery"><a>Доставка и оплата</a></Link>
+                        </StyledMenuItem>
 
-                        <li className={styles.menuInfo__item}>
-                            <Link href="/guarantee">
-                                <a className={styles.menuInfo__link} >Гарантия и возврат</a>
-                            </Link>
-                        </li>
+                        <StyledMenuItem>
+                            <Link href="/guarantee"><a>Гарантия и возврат</a></Link>
+                        </StyledMenuItem>
 
-                        <li className={styles.menuInfo__item}>
-                            <Link href="/points">
-                                <a className={styles.menuInfo__link}>Пункты самовывоза</a>
-                            </Link>
-                        </li>
+                        <StyledMenuItem>
+                            <Link href="/points"><a>Пункты самовывоза</a></Link>
+                        </StyledMenuItem>
 
-                        <li className={styles.menuInfo__item}>
-                            <Link href="/contacts">
-                                <a className={styles.menuInfo__link}>Контакты</a>
-                            </Link>
-                        </li>
+                        <StyledMenuItem>
+                            <Link href="/contacts"><a>Контакты</a></Link>
+                        </StyledMenuItem>
+                    </StyledMenu>
 
-                    </ul>
-                </div>
-            </div>
-        </div>
+                </StyledInner>
+            </Container>
+        </StyledWrapper>
 
     )
 }
 
 export default HeaderTop
+
+// styles
+export const StyledWrapper = styled.div`
+    background-color: ${vars.colorDarkBlue};
+`
+
+export const StyledInner = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0px;
+
+    @media (max-width: 768px) {
+        display: none;   
+    }
+`
+
+export const StyledMenu = styled.ul`
+    display: flex;
+    align-items: center;
+`
+
+export const StyledMenuItem = styled.li`
+    margin-right: 30px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    a {
+        font-size: 13px;
+        line-height: 15px;
+        color: white;
+        transition: color .2s linear;
+
+        &:hover {
+            color: ${vars.colorGreen};
+        }
+    }
+`

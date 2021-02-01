@@ -1,15 +1,18 @@
-// core
-import React from 'react'
-
-// styles
-import styles from './Footer.module.scss'
+// libs
+import styled from 'styled-components'
 
 const Footer = () => {
     return (
-        <div className={styles.footer}>
+        <StyledFooter>
             footer
-        </div>
+        </StyledFooter>
     )
 }
 
 export default Footer
+
+// styles
+export const StyledFooter = styled.footer`
+    min-height: 100px;
+    background-color: green;
+`

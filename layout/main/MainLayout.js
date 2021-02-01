@@ -1,12 +1,9 @@
 // core
-import Head from 'next/head';
+import Head from 'next/head'
 
 // componnets
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
-
-// styles
-import styles from './MainLayout.module.scss'
+import Header from '../../components/Header/Header'
+import Footer from '../../components/Footer/Footer'
 
 export default function MainLayout({ children, title }) {
     return (
@@ -15,15 +12,27 @@ export default function MainLayout({ children, title }) {
                 <title>{title}</title>
             </Head>
 
-            <div className={styles.page}>
+            <StyledPage>
                 <Header />
 
-                <main className={styles.main}>
+                <StyledMain className={styles.main}>
                     {children}
-                </main>
+                </StyledMain>
 
                 <Footer />
-            </div>
+            </StyledPage>
         </>
     )
 }
+
+// styles
+const StyledPage = styled.div`
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+`
+
+const StyledMain = styled.main`
+   flex-grow: 1;
+`

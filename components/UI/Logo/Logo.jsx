@@ -1,25 +1,47 @@
 // core
 import Link from 'next/link'
 
+// libs
+import styled from 'styled-components'
+
 // images
 import logoSvg from '../../../images/logo.svg'
-
-// styles
-import styles from './Logo.module.scss'
 
 const Logo = () => {
     return (
         <Link href='/'>
-            <a className={styles.logo}>
+            <LogoWrapper>
                 <img src={logoSvg} alt="Логотип Audio-shop" />
 
-                <div className={styles.logo__text}>
+                <LogoText>
                     AudioFree
                     <span> | Интернет магазин беспроводных наушников по РФ</span>
-                </div>
-            </a>
+                </LogoText>
+            </LogoWrapper>
         </Link>
     )
 }
 
 export default Logo
+
+// styles
+const LogoWrapper = styled.a`
+    display: flex;
+    align-items: center;
+
+    img {
+        margin-right: 9px;
+    }
+`
+
+const LogoText = styled.div`
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+
+    span {
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 15px;        
+    }
+`
