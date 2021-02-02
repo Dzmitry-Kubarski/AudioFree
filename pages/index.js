@@ -4,6 +4,7 @@ import MainLayout from '../layout/main/MainLayout'
 // components
 import Intro from './../components/Intro/Intro'
 import Button from './../components/UI/Button/Button'
+import Card from './../components/UI/Card/Card';
 
 const HomePage = () => {
     return (
@@ -12,11 +13,12 @@ const HomePage = () => {
 
             <div style={{ padding: '100px' }}>
 
-                <Button >primary</Button>
+                <Card />
 
-                <Button variant='green'>green button</Button>
+                <Card variant='sale' />
 
-                <Button variant='outline'>outline button</Button>
+                <Card variant='limited' />
+
             </div>
         </MainLayout>
     )
