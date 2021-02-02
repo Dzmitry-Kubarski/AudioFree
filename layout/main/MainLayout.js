@@ -12,6 +12,9 @@ export default function MainLayout({ children, title }) {
     return (
         <>
             <Head>
+                <meta name='description' content='Интернет магазин беспроводных наушников' />
+                <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"></link>
+
                 <title>{title}</title>
             </Head>
 
