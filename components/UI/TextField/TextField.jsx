@@ -4,9 +4,15 @@ import styled from 'styled-components'
 // utils
 import { vars } from '../../../styles/vars'
 
-const TextField = ({ type = 'text', placeholder }) => {
+const TextField = ({ type = 'text', name, value, onChange, placeholder }) => {
     return (
-        <Input type={type} placeholder={placeholder} />
+        <Input
+            type={type}
+            placeholder={placeholder}
+            name={name}
+            value={value}
+            onChange={onChange}
+        />
     )
 }
 
@@ -23,8 +29,6 @@ const Input = styled.input`
     border-radius: 39px;
     padding: 0 34px;
     transition: border .3s linear;
-
-    margin-bottom: 20px;
 
     &::placeholder {
         font-style: italic;
