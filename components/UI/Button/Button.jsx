@@ -4,9 +4,9 @@ import styled, { css } from 'styled-components'
 // utils
 import { vars } from '../../../styles/vars'
 
-const Button = ({ type = 'button', variant, full, medium, children }) => {
+const Button = ({ type = 'button', variant, full, medium, large, children }) => {
     return (
-        <StyledButton type={type} variant={variant} full={full} medium={medium}>
+        <StyledButton type={type} variant={variant} full={full} medium={medium} large={large}>
             {children}
         </StyledButton>
     )
@@ -77,5 +77,10 @@ const StyledButton = styled.button`
     ${props => props.medium && css`
         min-height: 52px;
         font-size: 14px;
+    `}
+
+    ${props => props.large && css`
+        min-height: 74px;
+        font-size: 18px;
     `}
 `
