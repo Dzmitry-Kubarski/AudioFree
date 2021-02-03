@@ -5,6 +5,7 @@ import MainLayout from '../layout/main/MainLayout'
 import Intro from './../components/Intro/Intro'
 import Variants from './../components/Variants/Variants';
 import Tabs from './../components/UI/Tabs/Tabs';
+import BannerSale from './../components/UI/BannerSale/BannerSale';
 
 const HomePage = () => {
     return (
@@ -12,7 +13,7 @@ const HomePage = () => {
             <Intro />
 
             <div style={{ padding: '100px' }}>
-                <Tabs />
+                <BannerSale />
             </div>
 
         </MainLayout>

@@ -161,11 +161,9 @@ const TabsBtn = styled.button`
     color: ${vars.colorBlack};
     text-align: left;
     cursor: pointer;
-    /* padding-left: 75px;     */
 
     svg {
         position: absolute;
-        /* left: 20px; */
         top: 50%;
         transform: translateY(-50%);
         fill: #C4C4C4;

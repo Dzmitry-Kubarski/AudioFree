@@ -1,9 +1,12 @@
+// libs
 import styled, { css } from 'styled-components'
+
+// utils
 import { vars } from '../../../styles/vars'
 
-const Button = ({ type = 'button', variant, children }) => {
+const Button = ({ type = 'button', variant, full, medium, children }) => {
     return (
-        <StyledButton type={type} variant={variant}>
+        <StyledButton type={type} variant={variant} full={full} medium={medium}>
             {children}
         </StyledButton>
     )
@@ -13,7 +16,6 @@ export default Button
 
 // styles
 const StyledButton = styled.button`
-
     position: relative;
     font-size: 13px;
     font-weight: bold;
@@ -66,5 +68,14 @@ const StyledButton = styled.button`
         color: #fff;
         background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #91CF0D 100%), #97D413;
         box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    `}
+
+    ${props => props.full && css`
+        width: 100%;
+    `}
+
+    ${props => props.medium && css`
+        min-height: 52px;
+        font-size: 14px;
     `}
 `
