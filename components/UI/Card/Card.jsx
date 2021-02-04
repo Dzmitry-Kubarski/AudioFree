@@ -10,16 +10,13 @@ import CheckedIcon from './../../SVG/CheckedIcon'
 import FavouritesIcon from './../../SVG/FavouritesIcon'
 import ComparisonIcon from './../../SVG/ComparisonIcon'
 
-// images
-import cardImg from '../../../images/models/img-1.png'
-
 // components
 import Button from './../Button/Button'
 import LabelSale from '../LabelSale/LabelSale'
 import LabelDays from './../LabelDays/LabelDays'
 import ButtonIcon from './../ButtonIcon/ButtonIcon'
 
-const Card = ({ variant = 'header' }) => {
+const Card = ({ variant = 'header', item }) => {
 
     const ratingChanged = (newRating) => {
         console.log(newRating)
@@ -56,16 +53,16 @@ const Card = ({ variant = 'header' }) => {
 
                 {variant === 'limited' &&
                     <CardLabelSaleWrap>
-                        <LabelDays days='50'>15%</LabelDays>
+                        <LabelSale>-{item.discountCount}%</LabelSale>
                     </CardLabelSaleWrap>
                 }
 
                 <CardImgWrap>
-                    <img src={cardImg} alt="Наушники Bluetooth Baseus Encok D01 NGD01-09 (red)" />
+                    <img src={item.imgUrl} alt={item.title} />
                 </CardImgWrap>
 
                 <div>
-                    <CardTitle>Наушники Bluetooth Baseus Encok D01 NGD01-09 (red)</CardTitle>
+                    <CardTitle>{item.title}</CardTitle>
 
                     {variant === 'sale' &&
                         <CardText>
@@ -92,7 +89,7 @@ const Card = ({ variant = 'header' }) => {
 
                     {variant === 'limited' &&
                         <CardLimiedDays>
-                            <LabelDays days='50'>15%</LabelDays>
+                            <LabelDays days={item.daysCount} />
                             <p>До конца акции <br /> на этот товар осталось:</p>
                         </CardLimiedDays>}
                 </div>
