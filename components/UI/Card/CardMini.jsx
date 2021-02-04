@@ -9,14 +9,11 @@ import Rating from 'react-rating'
 // utils
 import { vars } from '../../../styles/vars'
 
-// images
-import productImg from '../../../images/top/img-1.png'
-
 // icons
 import StarEmpty from './../../SVG/StarEmpty'
 import StarFull from './../../SVG/StarFull'
 
-const CardMini = () => {
+const CardMini = ({ item }) => {
     const [value, setValue] = useState(3)
 
     const ratingChanged = (newRating) => {
@@ -27,14 +24,14 @@ const CardMini = () => {
         <CardWrapper>
             <CardInner>
                 <CardImgWrap>
-                    <img src={productImg} alt='Наушники Bluetooth Baseus Encok D01 NGD01-09 (red)' />
+                    <img src={item.imgUrl} alt='Наушники Bluetooth Baseus Encok D01 NGD01-09 (red)' />
                 </CardImgWrap>
 
                 <div>
                     <Link href='/test'>
                         <CardLink>
                             <CardTitleWrap>
-                                Наушники Bluetooth Baseus Encok D01 NGD01-09 (red)
+                                {item.title}
                             </CardTitleWrap>
                         </CardLink>
                     </Link>
@@ -43,7 +40,7 @@ const CardMini = () => {
                         <Rating initialRating={value} onChange={ratingChanged} emptySymbol={<StarEmpty />} fullSymbol={<StarFull />} />
                     </CardStarsWrap>
 
-                    <CardPrice>1 950 ₽</CardPrice>
+                    <CardPrice>{item.price} ₽</CardPrice>
                 </div>
             </CardInner>
 
@@ -61,7 +58,6 @@ const CardWrapper = styled.div`
     position: relative;
     z-index: 99;
     border-radius: 9px;
-    margin-bottom: 22px;
 `
 
 const CardInner = styled.div`
