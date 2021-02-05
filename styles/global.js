@@ -36,6 +36,7 @@ export const GlobalStyle = createGlobalStyle`
     }  
     a {
         text-decoration: none;
+        color: inherit;
     }
     img {
         max-width: 100%;
