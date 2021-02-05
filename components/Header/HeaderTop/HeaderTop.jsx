@@ -16,7 +16,7 @@ const HeaderTop = () => {
         <StyledWrapper>
             <Container>
                 <StyledInner>
-                    <Logo />
+                    <Logo full />
 
                     <StyledMenu>
                         <StyledMenuItem>
