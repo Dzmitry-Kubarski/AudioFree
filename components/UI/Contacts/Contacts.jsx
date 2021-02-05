@@ -73,6 +73,7 @@ const SubTitle = styled.span`
     ${props => props.phone && css`
         font-size: 13px;
         color: #aeaeae;
+        margin-bottom: 0;
     `}
 `
 

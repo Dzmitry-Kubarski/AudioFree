@@ -11,9 +11,9 @@ import { vars } from '../../styles/vars'
 // components
 import HeaderTop from '../Header/HeaderTop/HeaderTop'
 import HeaderBottom from '../Header/HeaderBottom/HeaderBottom'
-import FreeCcall from './../UI/FreeCcall/FreeCcall'
 import Search from './../UI/Search/Search'
 import { Container } from '../UI/Container/Container'
+import Contacts from './../UI/Contacts/Contacts'
 
 // icons
 import ComparisonIcon from './../SVG/ComparisonIcon'
@@ -28,7 +28,7 @@ const Header = () => {
             <div>
                 <Container>
                     <StyledHeaderInner>
-                        <FreeCcall />
+                        <Contacts phone number='8 800 551-92-02' subTitle='Бесплатный звонок по РФ' />
                         <Search />
 
                         <StyledControl>
