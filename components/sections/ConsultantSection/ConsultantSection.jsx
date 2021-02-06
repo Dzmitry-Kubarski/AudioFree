@@ -10,8 +10,8 @@ import { Container } from '../../UI/Container/Container'
 import Button from '../../UI/Button/Button'
 
 // images
-import backgroundImg from '../../images/intro/bg.png'
-import imgBox from '../../images/consultant/img-box.png'
+import backgroundImg from '../../../images/intro/bg.png'
+import imgBox from '../../../images/consultant/img-box.png'
 
 const ConsultantSection = () => {
     return (

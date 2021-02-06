@@ -2,15 +2,15 @@
 import styled from 'styled-components'
 
 // utils
-import { vars } from '../../styles/vars'
+import { vars } from '../../../styles/vars'
 import { variantsData } from './variantsData'
 
 // images
-import bgImg from '../../images/intro/bg.png'
+import bgImg from '../../../images/intro/bg.png'
 
 // components
-import { Container } from './../UI/Container/Container';
-import VariantsSlider from '../UI/VariantsSlider/VariantsSlider';
+import { Container } from '../../UI/Container/Container'
+import VariantsSlider from '../../UI/VariantsSlider/VariantsSlider'
 
 const VariantsSection = () => {
     return (

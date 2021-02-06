@@ -5,9 +5,9 @@ import styled from 'styled-components'
 import { discountItems } from './discountItems'
 
 // components
-import { Container } from './../UI/Container/Container'
-import Button from './../UI/Button/Button'
-import Card from './../UI/Card/Card'
+import { Container } from '../../UI/Container/Container'
+import Button from '../../UI/Button/Button'
+import Card from '../../UI/Card/Card'
 
 const DiscountSection = () => {
     return (

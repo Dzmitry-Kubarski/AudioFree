@@ -5,9 +5,9 @@ import styled from 'styled-components'
 import { cardItems } from './cardItems'
 
 // components
-import { Container } from './../UI/Container/Container'
-import Button from './../UI/Button/Button'
-import CardMini from '../UI/Card/CardMini'
+import { Container } from '../../UI/Container/Container'
+import Button from '../../UI/Button/Button'
+import CardMini from '../../UI/Card/CardMini'
 
 const LeadersSection = () => {
     return (
