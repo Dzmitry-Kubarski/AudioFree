@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 // utils
-import { vars } from '../../styles/vars'
+import { vars } from '../../../styles/vars'
 import { contentItems } from './contentItems'
 import { tabsNames } from './tabsNames'
 
@@ -11,7 +11,7 @@ import { tabsNames } from './tabsNames'
 import styled from 'styled-components'
 
 // components
-import { Container } from './../UI/Container/Container'
+import { Container } from '../../UI/Container/Container'
 
 const QuestionsSection = () => {
     const [activeTab, setActiveTab] = useState(0)
@@ -48,7 +48,7 @@ const QuestionsSection = () => {
                                 <ContentInner key={`${item.blogLink}_${index}`} className={activeTab === index ? 'active' : ''}>
                                     <ContentTitle>{item.title}</ContentTitle>
 
-                                    {item.text.map((text) => <ContentText>{text}</ContentText>)}
+                                    {item.text.map((text, index) => <ContentText key={index}>{text}</ContentText>)}
 
                                     <Link href={item.blogLink}>
                                         <ContentLink>Перейти в блог</ContentLink>
