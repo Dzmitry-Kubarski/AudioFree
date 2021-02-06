@@ -1,4 +1,4 @@
-export const VariantsData = [
+export const variantsData = [
     { title: 'TRUE WIRELESS', imgUrl: 'variants/img-1.png', hrefUrl: '/variants' },
     { title: 'Наушники с проводом', imgUrl: 'variants/img-2.png', hrefUrl: '/variants' },
     { title: 'Гарнитуры', imgUrl: 'variants/img-3.png', hrefUrl: '/variants' },

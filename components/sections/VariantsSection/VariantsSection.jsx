@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 // utils
 import { vars } from '../../styles/vars'
-import { VariantsData } from './VariantsData'
+import { variantsData } from './variantsData'
 
 // images
 import bgImg from '../../images/intro/bg.png'
@@ -12,7 +12,7 @@ import bgImg from '../../images/intro/bg.png'
 import { Container } from './../UI/Container/Container';
 import VariantsSlider from '../UI/VariantsSlider/VariantsSlider';
 
-const Variants = () => {
+const VariantsSection = () => {
     return (
         <StyledWrapper>
             <Container>
@@ -23,13 +23,13 @@ const Variants = () => {
             </Container>
 
             <div className="swiper-container">
-                <VariantsSlider data={VariantsData} />
+                <VariantsSlider data={variantsData} />
             </div>
         </StyledWrapper>
     )
 }
 
-export default Variants
+export default VariantsSection
 
 // styles
 const StyledWrapper = styled.section`

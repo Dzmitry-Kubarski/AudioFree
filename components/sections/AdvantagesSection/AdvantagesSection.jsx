@@ -14,7 +14,7 @@ import { Container } from './../UI/Container/Container'
 import AdvantagesItem from './AdvantagesItem'
 import Pulse from './../UI/Pulse/Pulse'
 
-const Advantages = () => {
+const AdvantagesSection = () => {
     return (
         <Wrapper>
             <Container>
@@ -42,7 +42,7 @@ const Advantages = () => {
     )
 }
 
-export default Advantages
+export default AdvantagesSection
 
 // styles
 const Wrapper = styled.section`

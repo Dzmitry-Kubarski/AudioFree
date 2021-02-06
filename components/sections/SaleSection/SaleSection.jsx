@@ -2,9 +2,9 @@
 import styled from 'styled-components'
 
 // components
-import { Container } from './../UI/Container/Container'
-import BannerSale from './../UI/BannerSale/BannerSale'
-import Card from './../UI/Card/Card'
+import { Container } from '../../UI/Container/Container'
+import BannerSale from '../../UI/BannerSale/BannerSale'
+import Card from '../../UI/Card/Card'
 
 // utils
 import { cardListItems } from './cardListItems'

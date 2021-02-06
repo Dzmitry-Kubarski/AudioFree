@@ -13,7 +13,7 @@ import styled from 'styled-components'
 // components
 import { Container } from './../UI/Container/Container'
 
-const Questions = () => {
+const QuestionsSection = () => {
     const [activeTab, setActiveTab] = useState(0)
 
     const selectActiveTab = (index) => {
@@ -62,7 +62,7 @@ const Questions = () => {
     )
 }
 
-export default Questions
+export default QuestionsSection
 
 // styles
 const Wrapper = styled.section`

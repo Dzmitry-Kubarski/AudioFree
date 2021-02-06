@@ -2,12 +2,12 @@
 import styled from 'styled-components'
 
 // components
-import { Container } from './../UI/Container/Container'
+import { Container } from '../../UI/Container/Container'
 
 // utils
 import { guaranteesItems } from './guaranteesItems'
 
-const Guarantees = () => {
+const GuaranteesSection = () => {
     return (
         <Wrapper>
             <Container>
@@ -44,7 +44,7 @@ const Guarantees = () => {
     )
 }
 
-export default Guarantees
+export default GuaranteesSection
 
 // styles
 const Wrapper = styled.section`

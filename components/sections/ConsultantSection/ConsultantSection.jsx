@@ -2,18 +2,18 @@
 import styled from 'styled-components'
 
 // utils
-import { vars } from '../../styles/vars'
+import { vars } from '../../../styles/vars'
 
 // components
-import Pulse from './../UI/Pulse/Pulse'
-import { Container } from './../UI/Container/Container'
-import Button from './../UI/Button/Button'
+import Pulse from '../../UI/Pulse/Pulse'
+import { Container } from '../../UI/Container/Container'
+import Button from '../../UI/Button/Button'
 
 // images
 import backgroundImg from '../../images/intro/bg.png'
 import imgBox from '../../images/consultant/img-box.png'
 
-const Consultant = () => {
+const ConsultantSection = () => {
     return (
         <Wrapper>
             <Container>
@@ -46,7 +46,7 @@ const Consultant = () => {
     )
 }
 
-export default Consultant
+export default ConsultantSection
 
 // styles
 const Wrapper = styled.section`

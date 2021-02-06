@@ -2,16 +2,16 @@
 import styled from 'styled-components'
 
 // utils
-import { vars } from '../../styles/vars'
+import { vars } from '../../../styles/vars'
 
 // images
 import itemImg from '../../images/intro/item-1.png'
 import introBg from '../../images/intro/bg.png'
 
 // components
-import { Container } from './../UI/Container/Container';
+import { Container } from '../../UI/Container/Container';
 
-const Intro = () => {
+const IntroSection = () => {
     return (
         <StyledSection>
             <Container>
@@ -34,7 +34,7 @@ const Intro = () => {
     )
 }
 
-export default Intro
+export default IntroSection
 
 // styles
 const StyledSection = styled.section`
