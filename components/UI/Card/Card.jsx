@@ -1,6 +1,6 @@
 // libs
 import styled, { css } from 'styled-components'
-import ReactStars from 'react-stars'
+import Rating from 'react-rating'
 
 // utils
 import { vars } from '../../../styles/vars'
@@ -9,6 +9,8 @@ import { vars } from '../../../styles/vars'
 import CheckedIcon from './../../SVG/CheckedIcon'
 import FavouritesIcon from './../../SVG/FavouritesIcon'
 import ComparisonIcon from './../../SVG/ComparisonIcon'
+import StarEmpty from './../../SVG/StarEmpty'
+import StarFull from './../../SVG/StarFull'
 
 // components
 import Button from './../Button/Button'
@@ -47,7 +49,7 @@ const Card = ({ variant = 'header', item }) => {
 
                 {variant === 'sale' &&
                     <CardLabelSaleWrap>
-                        <LabelSale>15%</LabelSale>
+                        <LabelSale>-{item.discountCount}%</LabelSale>
                     </CardLabelSaleWrap>
                 }
 
@@ -66,19 +68,18 @@ const Card = ({ variant = 'header', item }) => {
 
                     {variant === 'sale' &&
                         <CardText>
-                            Многие думают, что Lorem Ipsum - взятый с потолка
-                            псевдо-латинский набор слов, но это не совсем так.
+                            {item.text}
                         </CardText>}
 
                     {variant !== 'limited' &&
                         <CardRow>
-                            <ReactStars
-                                count={5}
+                            <Rating
+                                initialRating={item.ratingValue}
                                 onChange={ratingChanged}
-                                size={19}
-                                color1='#D4D4D4'
-                                color2='#FFC107'
+                                emptySymbol={<StarEmpty />}
+                                fullSymbol={<StarFull />}
                             />
+
                             <CardPrice>1 950 ₽</CardPrice>
                         </CardRow>}
 
