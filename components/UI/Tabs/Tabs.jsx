@@ -83,7 +83,6 @@ const TabsWrapper = styled.div`
     width: 100%;
     max-width: 270px;
     flex-shrink: 0;
-    margin-right: 15px;
 
     @media (max-width: 1280px) {
         max-width: 100%;   
