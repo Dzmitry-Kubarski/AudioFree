@@ -1,3 +1,6 @@
+// core
+import Link from 'next/link'
+
 // libs
 import styled from 'styled-components'
 
@@ -37,7 +40,9 @@ const ConsultantSection = () => {
                         <SubTitle>Приятных и безопасных покупок!</SubTitle>
 
                         <BtnWrap>
-                            <Button variant='green' large full>Получить консультацию</Button>
+                            <Link href='/consultation' passHref>
+                                <Button variant='green' full large>Получить консультацию</Button>
+                            </Link>
                         </BtnWrap>
                     </Content>
                 </Inner>

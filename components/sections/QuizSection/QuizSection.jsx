@@ -1,3 +1,6 @@
+// core
+import Link from 'next/link'
+
 // libs
 import styled from 'styled-components'
 
@@ -27,7 +30,9 @@ const QuizSection = () => {
                         </SubTitle>
 
                         <BtnWrap>
-                            <Button variant='green' full large>Пройти тест и получить скидку!</Button>
+                            <Link href='/quiz' passHref>
+                                <Button variant='green' full large>Пройти тест и получить скидку!</Button>
+                            </Link>
                         </BtnWrap>
                     </Content>
 

@@ -1,3 +1,6 @@
+// core
+import Link from 'next/link'
+
 // libs
 import styled from 'styled-components'
 
@@ -27,7 +30,9 @@ const DiscountSection = () => {
                 </CardList>
 
                 <BtnWrap>
-                    <Button large full>Смотреть больше моделей</Button>
+                    <Link href='/products' passHref>
+                        <Button full large>Смотреть больше моделей</Button>
+                    </Link>
                 </BtnWrap>
             </Container>
         </Wrapper>

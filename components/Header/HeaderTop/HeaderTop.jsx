@@ -20,19 +20,19 @@ const HeaderTop = () => {
 
                     <StyledMenu>
                         <StyledMenuItem>
-                            <Link href="/delivery"><a>Доставка и оплата</a></Link>
+                            <Link href='/delivery'><a>Доставка и оплата</a></Link>
                         </StyledMenuItem>
 
                         <StyledMenuItem>
-                            <Link href="/guarantee"><a>Гарантия и возврат</a></Link>
+                            <Link href='/guarantees'><a>Гарантия и возврат</a></Link>
                         </StyledMenuItem>
 
                         <StyledMenuItem>
-                            <Link href="/points"><a>Пункты самовывоза</a></Link>
+                            <Link href='/points'><a>Пункты самовывоза</a></Link>
                         </StyledMenuItem>
 
                         <StyledMenuItem>
-                            <Link href="/contacts"><a>Контакты</a></Link>
+                            <Link href='/contacts'><a>Контакты</a></Link>
                         </StyledMenuItem>
                     </StyledMenu>
 

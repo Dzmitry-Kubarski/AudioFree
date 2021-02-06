@@ -42,7 +42,7 @@ const Header = () => {
                             </StyledControlItem>
 
                             <StyledControlItem>
-                                <Link href='/favourites'>
+                                <Link href='/favorites'>
                                     <StyledControlLink>
                                         <FavouritesIcon />
                                         <StyledControlCounter>23</StyledControlCounter>
@@ -110,6 +110,8 @@ export const StyledControlItem = styled.div`
 `
 
 export const StyledControlLink = styled.a`
+    cursor: pointer;
+
     svg {
         width: 25px;
         height: 25px;
