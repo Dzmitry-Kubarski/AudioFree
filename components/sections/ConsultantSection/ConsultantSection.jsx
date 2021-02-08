@@ -8,7 +8,7 @@ import styled from 'styled-components'
 import { vars } from '../../../styles/vars'
 
 // components
-import Pulse from '../../UI/Pulse/Pulse'
+import Pulse, { PulseWrapper, PulseItem } from '../../UI/Pulse/Pulse'
 import { Container } from '../../UI/Container/Container'
 import Button from '../../UI/Button/Button'
 
@@ -26,6 +26,13 @@ const ConsultantSection = () => {
                         <Pulse />
                     </ImgBox>
 
+
+                    <BtnWrapMobail>
+                        <Link href='/consultation' passHref>
+                            <Button variant='green' full large>Получить консультацию</Button>
+                        </Link>
+                    </BtnWrapMobail>
+
                     <Content>
                         <Title>
                             Персональный
@@ -33,7 +40,7 @@ const ConsultantSection = () => {
                         </Title>
 
                         <Text>
-                            Когда Вы совершаете покупки на сайте “AudioFree” - все Ваши заказы ведет личный менеджер, который
+                            Когда Вы совершаете покупки на сайте “AudioShop” - все Ваши заказы ведет личный менеджер, который
                             поможет с выбором и оформлением заказа.
                         </Text>
 
@@ -58,12 +65,24 @@ const Wrapper = styled.section`
     background: url(${backgroundImg});
     background-color: ${vars.colorPurple};
     padding-top: 45px;
+
+    @media (max-width: 1080px) {
+        padding: 50px 0;
+    }    
 `
+
 const Inner = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: 1080px) {
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: column;
+    }
 `
+
 const ImgBox = styled.div`
     position: relative;
     z-index: 1;
@@ -72,12 +91,36 @@ const ImgBox = styled.div`
         position: relative;
         z-index: 10;
         display: block;
+
+        @media (max-width: 540px) {
+            max-width: 228px;
+        }
+    }
+
+    @media (max-width: 540px) {
+        ${PulseWrapper} {
+            width: 218px;
+            height: 218px;
+        }
+
+        ${PulseItem} {
+            width: 218px;
+            height: 218px;
+        }
     }
 `
+
 const Content = styled.div`
     max-width: 560px;
     color: #fff;
+
+    @media (max-width: 1080px) {
+        max-width: 100%;
+        order: -1;
+        text-align: center;
+    }
 `
+
 const Title = styled.h3`
     font-weight: 300;
     font-size: 45px;
@@ -87,15 +130,24 @@ const Title = styled.h3`
     span {
         display: block;
         font-weight: bold;
-        font-size: 45px;
-        line-height: 53px;
+    }
+
+    @media (max-width: 540px) {
+        font-size: 24px;
+        line-height: 27px;
     }
 `
+
 const Text = styled.p`
     font-size: 24px;
     line-height: 30px;
     margin-bottom: 30px;
+
+    @media (max-width: 540px) {
+        font-size: 16px; 
+    }
 `
+
 const SubTitle = styled.h4`
     position: relative;
     z-index: 99;
@@ -117,8 +169,25 @@ const SubTitle = styled.h4`
         background: #97D513;
         opacity: .3;
     }
+
+    @media (max-width: 540px) {
+        font-size: 16px; 
+    }
 `
+
 const BtnWrap = styled.div`
     width: 100%;
     max-width: 337px;
+
+    @media (max-width: 1080px) {
+        display: none;
+    }
+`
+
+const BtnWrapMobail = styled(BtnWrap)`
+    display: none;
+
+    @media (max-width: 1080px) {
+        display: block;
+    }
 `

@@ -1,6 +1,6 @@
 export const cardListItems = [
     {
-        title: 'Наушники Bluetooth Baseus Encok D01 NGD01-09 (red)',
+        title: 'Наушники Bluetooth Baseus Encok D01 NGD01-09',
         text: 'Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так.',
         imgUrl: '/saleSection/img-1.jpg',
         discountCount: '50',
@@ -10,7 +10,7 @@ export const cardListItems = [
     },
 
     {
-        title: 'Наушники Bluetooth Baseus Encok D01 NGD01-04 (green)',
+        title: 'Наушники Bluetooth Baseus Encok D01 NGD01-04',
         text: 'Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так.',
         imgUrl: '/saleSection/img-2.jpg',
         ratingValue: 5,
@@ -19,7 +19,7 @@ export const cardListItems = [
     },
 
     {
-        title: 'Наушники Bluetooth Baseus Encok D05 NGD01-05 (black)',
+        title: 'Наушники Bluetooth Baseus Encok D05 NGD01-05',
         text: 'Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так.',
         imgUrl: '/saleSection/img-3.jpg',
         ratingValue: 3,

@@ -2,12 +2,14 @@
   "name": "audio-shop",
   "version": "0.1.0",
   "private": true,
+  "author": "Dzmitry Kubarski",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "@react-hook/window-size": "^3.0.7",
     "bcrypt": "^5.0.0",
     "classnames": "^2.2.6",
     "jsonwebtoken": "^8.5.1",

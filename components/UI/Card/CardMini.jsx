@@ -54,7 +54,6 @@ export default CardMini
 // styles
 const CardWrapper = styled.div`
     width: 100%;
-    max-width: 387px;
     position: relative;
     z-index: 99;
     border-radius: 9px;
@@ -76,8 +75,7 @@ const CardImgWrap = styled.div`
     height: auto;
     text-align: center;
     overflow: hidden;
-    margin-left: auto;
-    margin-right: auto;
+    margin-right: 15px;
 `
 
 const CardTitleWrap = styled.h3`

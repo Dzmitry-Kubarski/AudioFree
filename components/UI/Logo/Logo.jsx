@@ -58,6 +58,10 @@ const LogoText = styled.div`
             height: 15px;
             width: 2px;
             background-color: #fff;
-        }       
-    }
+        }  
+        
+        @media (max-width: 1100px) {
+            display: none;   
+        }
+    }    
 `

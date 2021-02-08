@@ -66,11 +66,11 @@ const Tabs = () => {
                     </TabsBtn>
                 </TabsItem>
 
-                <li>
+                <TabsItem className='more'>
                     <Link href='/more'>
-                        <TabsMoreWrap>Смотреть больше <br /> моделей</TabsMoreWrap>
+                        <TabsMore>Смотреть больше <br /> моделей</TabsMore>
                     </Link>
-                </li>
+                </TabsItem>
             </TabsList>
         </TabsWrapper>
     )
@@ -81,27 +81,21 @@ export default Tabs
 // styles
 const TabsWrapper = styled.div`
     width: 100%;
-    max-width: 270px;
     flex-shrink: 0;
 
     @media (max-width: 1280px) {
         max-width: 100%;   
         margin-right: 0;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
     }
 `
 
-const TabsList = styled.ul`
+export const TabsList = styled.ul`
 
-    @media (max-width: 1280px) {
-        display: flex;
-        flex-wrap: wrap;
-        margin-left: -15px;
-        margin-right: -15px;   
-    }
+    
 `
 
-const TabsItem = styled.li`
+export const TabsItem = styled.li`
     position: relative;  
     background-color: #fff;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
@@ -132,13 +126,12 @@ const TabsItem = styled.li`
         svg {
             fill: #8D77C8;
         }
-    }   
+    }    
 
-    &:last-child {
-        margin-bottom: 0;
-        /* &::after {
+    &.more {
+        &::after {
            display: none;
-        } */
+        }
     }
 
     @media (max-width: 1280px) {
@@ -160,6 +153,7 @@ const TabsBtn = styled.button`
     color: ${vars.colorBlack};
     text-align: left;
     cursor: pointer;
+    padding-right: 15px;
 
     svg {
         position: absolute;
@@ -172,6 +166,10 @@ const TabsBtn = styled.button`
     @media (max-width: 1280px) {
         min-height: 100px;   
     }
+
+    @media (max-width: 940px) {
+        min-height: 55px;   
+    }
 `
 
 const TabsIconWrap = styled.div`
@@ -182,9 +180,13 @@ const TabsIconWrap = styled.div`
     justify-content: center;
     margin-left: 12px;
     margin-right: 24px;
+
+    @media (max-width: 450px) {
+        margin-right: 15px;   
+    }
 `
 
-const TabsMoreWrap = styled.a`
+const TabsMore = styled.a`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -198,4 +200,9 @@ const TabsMoreWrap = styled.a`
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
+
+    @media (max-width: 940px) {
+        min-height: 55px; 
+        background-position: right bottom;
+    }
 `

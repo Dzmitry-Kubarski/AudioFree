@@ -1,12 +1,10 @@
 // core
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 // libs
 import styled from 'styled-components'
-
-
-// utils
-import { vars } from '../../styles/vars'
+import { useWindowSize } from '@react-hook/window-size'
 
 // components
 import HeaderTop from '../Header/HeaderTop/HeaderTop'
@@ -14,136 +12,101 @@ import HeaderBottom from '../Header/HeaderBottom/HeaderBottom'
 import Search from './../UI/Search/Search'
 import { Container } from '../UI/Container/Container'
 import Contacts from './../UI/Contacts/Contacts'
+import HeaderControl from './HeaderControl'
 
 // icons
 import ComparisonIcon from './../SVG/ComparisonIcon'
 import FavouritesIcon from './../SVG/FavouritesIcon'
 import CartIcon from './../SVG/CartIcon'
+import PhoneIcon from './../SVG/PhoneIcon'
+import BurgerIcon from './../SVG/BurgerIcon'
+import SearchIcon from './../SVG/SearchIcon'
 
 const Header = () => {
+    const [width] = useWindowSize()
+
+    const [isPhoneMini, setIsPhoneMini] = useState(false)
+    const [isSearchMini, setIsSearchMini] = useState(false)
+
+    useEffect(() => {
+        width <= 1120 ? setIsPhoneMini(true) : setIsPhoneMini(false)
+    }, [width])
+
+    useEffect(() => {
+        width <= 750 ? setIsSearchMini(true) : setIsSearchMini(false)
+    }, [width])
+
     return (
-        <StyledHeader>
+        <HeaderWrapper>
             <HeaderTop />
 
             <div>
                 <Container>
-                    <StyledHeaderInner>
-                        <Contacts phone number='8 800 551-92-02' subTitle='Бесплатный звонок по РФ' />
-                        <Search />
+                    <HeaderInner>
+                        {!isPhoneMini
+                            ? <Contacts
+                                number='8 800 551-92-02'
+                                subTitle='Бесплатный звонок по РФ'
+                                phone
+                                shadow
+                            />
+                            : <BurgerBtn type='button'>
+                                <BurgerIcon />
+                            </BurgerBtn>
+                        }
 
-                        <StyledControl>
-                            <StyledControlItem>
-                                <Link href='/comparison'>
-                                    <StyledControlLink>
-                                        <ComparisonIcon />
-                                        <StyledControlCounter>1</StyledControlCounter>
-                                    </StyledControlLink>
-                                </Link>
-                            </StyledControlItem>
+                        {!isSearchMini
+                            ? <Search />
+                            : <SearchMini type='button'>
+                                <SearchIcon />
+                            </SearchMini>
+                        }
 
-                            <StyledControlItem>
-                                <Link href='/favorites'>
-                                    <StyledControlLink>
-                                        <FavouritesIcon />
-                                        <StyledControlCounter>23</StyledControlCounter>
-                                    </StyledControlLink>
-                                </Link>
-                            </StyledControlItem>
+                        <HeaderControl />
 
-                            <StyledControlItem>
-                                <Link href='/cart'>
-                                    <StyledControlLink>
-                                        <CartIcon />
-                                        <StyledControlCounter>55</StyledControlCounter>
-                                    </StyledControlLink>
-                                </Link>
-                            </StyledControlItem>
-                        </StyledControl>
-
-                    </StyledHeaderInner>
+                    </HeaderInner>
                 </Container>
             </div>
             <HeaderBottom />
-        </StyledHeader >
+        </HeaderWrapper >
     )
 }
 
 export default Header
 
 // styles
-export const StyledHeader = styled.header`
+const HeaderWrapper = styled.header`
     min-height: 80px;
     background-color: #fff;
 `
 
-export const StyledHeaderInner = styled.div`
+const BurgerBtn = styled.button`
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    margin-right: 15px;
+`
+
+const HeaderInner = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 25px 0;  
+
+    @media (max-width: 750px) {
+        justify-content: flex-start;          
+    }    
 `
 
-export const StyledControl = styled.div`
+const SearchMini = styled.button`
+    width: 30px;
+    height: 30px;
     display: flex;
-    align-items: center; 
-`
-
-export const StyledControlItem = styled.div`
-    position: relative;
-    width: 38px;
-    height: 38px;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    background: #FFFFFF;
-    box-shadow: 0px 5.81081px 15.1081px rgba(140, 121, 199, 0.3);
-    border-radius: 50%;
-    margin-right: 30px;
-
-    &:last-child {
-        margin-right: 5px;
-
-        @media (max-width: 768px) {
-            margin-right: 0;   
-        }
-    }
+    align-items: center;
+    background: transparent;
 `
 
-export const StyledControlLink = styled.a`
-    cursor: pointer;
-
-    svg {
-        width: 25px;
-        height: 25px;
-    }
-
-    path {        
-        transition: fill .2s linear;
-    }
-
-    &:hover {
-        svg, path {
-            fill: ${vars.colorGreen};
-        }
-    }
-`
-
-export const StyledControlCounter = styled.span`
-    position: absolute;
-    right: -10px;
-    top: -10px;
-    width: 20px;
-    height: 20px;
-    background-color: #34C900;
-    text-align: center;
-    line-height: 20px;
-    border-radius: 50%;
-    color: white;
-
-    @media (max-width: 490px) {
-        width: 13px;
-        height: 13px;
-        font-size: 9px;
-        line-height: 11px;   
-    }
-`

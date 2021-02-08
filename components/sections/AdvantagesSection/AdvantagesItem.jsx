@@ -22,7 +22,7 @@ const AdvantagesItem = ({ right, item }) => {
 export default AdvantagesItem
 
 // styles
-const ItemCircle = styled.div`
+export const ItemCircle = styled.div`
     position: relative;
     display: flex;
     align-items: center;
@@ -64,7 +64,7 @@ const ItemCircle = styled.div`
     `}
 `
 
-const ItemWrapper = styled.div`
+export const ItemWrapper = styled.div`
     display: flex;
     justify-content: center;
     color: #fff;
@@ -83,7 +83,7 @@ const ItemWrapper = styled.div`
     `}
 `
 
-const ItemNumber = styled.span`
+export const ItemNumber = styled.span`
     position: absolute;
     left: -30px;
     top: 50%;
@@ -96,6 +96,14 @@ const ItemNumber = styled.span`
         left: auto;
         right: -30px;
     `}
+
+    @media (max-width: 1250px) {
+        display: none; 
+    }
+
+    @media (max-width: 1020px) {
+        display: block; 
+    }
 `
 
 const ItemTitle = styled.h3`

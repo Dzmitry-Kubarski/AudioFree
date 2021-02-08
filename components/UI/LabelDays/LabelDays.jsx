@@ -23,6 +23,7 @@ const LabelWrapper = styled.div`
     color: white;
     background-color: #8B75C8;
     border-radius: 50%;
+    flex-shrink: 0;
 `
 
 const LabelCount = styled.span`

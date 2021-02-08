@@ -12,6 +12,8 @@ import styled from 'styled-components'
 
 // components
 import { Container } from '../../UI/Container/Container'
+import PointerSwiper from './../../UI/PointerSwiper/PointerSwiper'
+import TitleSection from './../../UI/TitleSection/TitleSection';
 
 const QuestionsSection = () => {
     const [activeTab, setActiveTab] = useState(0)
@@ -23,10 +25,7 @@ const QuestionsSection = () => {
     return (
         <Wrapper>
             <Container>
-                <Title>
-                    Что стоит знать
-                    <span>при выборе наушников</span>
-                </Title>
+                <TitleSection subTitle='Что стоит знать' title='при выборе наушников' />
 
                 <Inner>
                     <Tabs>
@@ -68,20 +67,9 @@ export default QuestionsSection
 const Wrapper = styled.section`
     padding: 100px 0px;
     background: #F8F5FE;
-`
 
-const Title = styled.h2`
-    font-weight: 300;
-    font-size: 44px;
-    color: #535353;
-    text-align: center;
-    margin-bottom: 35px;
-    
-    span {
-        display: block;
-        font-weight: 700;
-        font-size: 44px;
-        color: #8b75c8;
+    @media (max-width: 540px) {
+        padding: 50px 0;
     }
 `
 
@@ -89,6 +77,10 @@ const Inner = styled.div`
     display: flex;
     justify-content: center;
     align-items: flex-start;
+
+    @media (max-width: 1220px) {
+        flex-wrap: wrap;
+    }
 `
 
 const Tabs = styled.ul`
@@ -96,7 +88,12 @@ const Tabs = styled.ul`
     max-width: 495px;
     background: #fefdff;
     border-radius: 9px 0 0 9px;
-    overflow-x: hidden;
+    overflow-x: hidden;   
+
+    @media (max-width: 1220px) {
+        max-width: 100%;
+        margin-bottom: 15px;
+    } 
 `
 
 const TabsBtn = styled.button`
@@ -110,6 +107,7 @@ const TabsBtn = styled.button`
     cursor: pointer;
     padding: 41px 0px;
     padding-left: 45px;
+    padding-right: 15px;
 `
 
 const TabsItem = styled.li`
@@ -144,18 +142,24 @@ const TabsItem = styled.li`
         }
 
         ${TabsBtn} {
-            font-weight: bold;
-            font-size: 20px;
+            font-weight: 500;
+            font-size: 18px;
             color: #4E4E4E;
         }
     }
 `
 
 const Content = styled.div`
+    min-height: 415px;
+    height: 100%;
     background: #fff;
     border-radius: 0 9px 9px 9px;
     box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.05);
     padding: 40px 30px 57px 85px; 
+
+    @media (max-width: 1220px) {
+        padding-left: 45px;
+    } 
 `
 
 const ContentInner = styled.div`
@@ -189,4 +193,16 @@ const ContentLink = styled.a`
     text-decoration: underline;
     color: ${vars.colorPurple};
     cursor: pointer;
+`
+
+const PointerSwiperWrap = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+
+    @media (max-width: 1220px) {
+        display: flex;   
+        margin-bottom: 15px;
+    }
 `

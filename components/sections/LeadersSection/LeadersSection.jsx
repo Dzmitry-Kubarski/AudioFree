@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 // libs
 import styled from 'styled-components'
+import Swiper from 'react-id-swiper'
 
 // utils
 import { cardItems } from './cardItems'
@@ -11,15 +12,21 @@ import { cardItems } from './cardItems'
 import { Container } from '../../UI/Container/Container'
 import Button from '../../UI/Button/Button'
 import CardMini from '../../UI/Card/CardMini'
+import TitleSection from './../../UI/TitleSection/TitleSection'
+import PointerSwiper from './../../UI/PointerSwiper/PointerSwiper';
 
 const LeadersSection = () => {
+
+    const params = {
+        slidesPerView: 'auto',
+        spaceBetween: 0,
+        grabCursor: true,
+    }
+
     return (
         <Wrapper>
             <Container>
-                <Title>
-                    ТОП-2021
-                    <span>лидеры предзаказов, обзоров и рекомендаций</span>
-                </Title>
+                <TitleSection subTitle='ТОП-2022' title='лидеры предзаказов, обзоров и рекомендаций' />
 
                 <CardList>
                     {cardItems.map((item, index) =>
@@ -28,6 +35,20 @@ const LeadersSection = () => {
                         </CardWrap>
                     )}
                 </CardList>
+
+                <CardListSlider>
+                    <Swiper {...params}>
+                        {cardItems.map((item, index) =>
+                            <CardWrap key={index}>
+                                <CardMini item={item} />
+                            </CardWrap>
+                        )}
+                    </Swiper>
+                </CardListSlider>
+
+                <PointerSwiperWrap>
+                    <PointerSwiper />
+                </PointerSwiperWrap>
 
                 <BtnWrap>
                     <Link href='/products' passHref>
@@ -45,20 +66,9 @@ export default LeadersSection
 const Wrapper = styled.section`
     background: #E6E1F2;
     padding: 90px 0px;
-`
 
-const Title = styled.h2`
-    font-weight: 300;
-    font-size: 44px;
-    color: #535353;
-    text-align: center;
-    margin-bottom: 50px;
-
-    span {
-        display: block;
-        font-weight: 700;
-        font-size: 44px;
-        color: #8b75c8;
+    @media (max-width: 540px) {
+        padding: 50px 0; 
     }
 `
 
@@ -69,6 +79,19 @@ const CardList = styled.div`
     margin-left: -10px;
     margin-right: -10px;
     margin-bottom: 75px;
+
+    @media (max-width: 1120px) {
+        display: none;
+    }
+`
+
+const CardListSlider = styled(CardList)`
+    display: none;
+
+    @media (max-width: 1120px) {
+        display: flex;
+        margin-bottom: 30px;
+    }
 `
 
 const CardWrap = styled.div`
@@ -76,6 +99,22 @@ const CardWrap = styled.div`
     margin-bottom: 30px;
     margin-left: 10px;
     margin-right: 10px;
+
+    @media (max-width: 1120px) {
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 850px) {
+        max-width: calc(40% - 20px); 
+    }
+
+    @media (max-width: 768px) {
+        max-width: calc(50% - 20px); 
+    }
+
+    @media (max-width: 540px) {
+        max-width: calc(100% - 20px); 
+    }
 `
 
 const BtnWrap = styled.div`
@@ -83,4 +122,16 @@ const BtnWrap = styled.div`
     max-width: 343px;
     display: flex;
     margin: 0 auto;
+`
+
+const PointerSwiperWrap = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    margin-bottom: 30px;
+
+    @media (max-width: 1120px) {
+        display: flex;   
+    }
 `
