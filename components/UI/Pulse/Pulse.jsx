@@ -15,25 +15,27 @@ const Pulse = () => {
 export default Pulse
 
 // styles
-const PulseWrapper = styled.div`
+export const PulseWrapper = styled.div`
     position: absolute;  
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     height: 405px;
     width: 405px;
+    max-width: 405px;
     border: none;
     border-radius: 50%;
     background-color: #fff;
     opacity: .1; 
 `
 
-const PulseItem = styled.div`
+export const PulseItem = styled.div`
     position: absolute;
     top: 0px;
     left: 0px;
     height: 405px;
     width: 405px;
+    max-width: 405px;
     border: 1px solid #fef5e1;
     border-radius: 50%;
     opacity: .3;

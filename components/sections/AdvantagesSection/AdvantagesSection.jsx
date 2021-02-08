@@ -11,20 +11,18 @@ import { dataItems } from './dataAdvantages'
 
 // components
 import { Container } from '../../UI/Container/Container'
-import AdvantagesItem from './AdvantagesItem'
-import Pulse from '../../UI/Pulse/Pulse'
+import AdvantagesItem, { ItemWrapper, ItemCircle, ItemNumber } from './AdvantagesItem'
+import Pulse, { PulseWrapper, PulseItem } from '../../UI/Pulse/Pulse'
+import TitleSection, { SubTitle } from './../../UI/TitleSection/TitleSection'
 
 const AdvantagesSection = () => {
     return (
         <Wrapper>
             <Container>
-                <Title>
-                    Чем беспроводные лучше?
-                    <span>Все о преимуществах наушников Bluetooth</span>
-                </Title>
+                <TitleSection subTitle='Чем беспроводные лучше?!' title='Все о преимуществах наушников Bluetooth' dark />
 
                 <Inner>
-                    <Col>
+                    <Col className='firstCol'>
                         {dataItems.slice(0, 3).map((item) => <AdvantagesItem key={item.number} item={item} />)}
                     </Col>
 
@@ -33,7 +31,7 @@ const AdvantagesSection = () => {
                         <Pulse />
                     </ImgBox>
 
-                    <Col>
+                    <Col className='right'>
                         {dataItems.slice(3).map((item) => <AdvantagesItem key={item.number} item={item} right />)}
                     </Col>
                 </Inner>
@@ -51,30 +49,68 @@ const Wrapper = styled.section`
     background-repeat: no-repeat;
     padding-top: 100px;
     padding-bottom: 80px;
+
+    ${SubTitle} {
+        margin-bottom: 80px;
+    }
+
+    @media (max-width: 540px) {
+        padding: 50px 0 0 0;
+    }
 `
 
-const Title = styled.h2`
-    color: #fff;
-    font-weight: 300;
-    font-size: 44px;
-    text-align: center;
-    margin-bottom: 100px;
+const Col = styled.div`
+    max-width: 320px;
 
-    span {
-        color: #fff;
-        display: block;
-        font-weight: 700;
-        font-size: 44px;
-    }
+    &.right {
+        @media (max-width: 1020px) {
+            ${ItemWrapper} {
+                text-align: left;            
+            }
+
+            ${ItemCircle} {
+                order: 0;
+                margin-right: 25px;
+                margin-left: 0;
+            }
+
+            ${ItemNumber} {
+                left: -30px;
+                right: 0px;
+            }
+        }        
+    } 
+
+    &.firstCol {
+        @media (max-width: 1020px) {
+            ${ItemWrapper} {
+                &:last-child {
+                    ${ItemCircle} {
+                        &:before {
+                            display: block;
+                        }
+                    }
+                }           
+            }           
+        }   
+    } 
+
+    @media (max-width: 400px) {
+        ${ItemNumber} {
+            display: none;
+        } 
+    }  
 `
 
 const Inner = styled.div`
     display: flex;
     justify-content: space-between;
-`
 
-const Col = styled.div`
-    max-width: 320px;
+    @media (max-width: 1020px) {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }    
 `
 
 const ImgBox = styled.div`
@@ -82,5 +118,26 @@ const ImgBox = styled.div`
 
     img {
         margin-bottom: -30px;
+
+        @media (max-width: 540px) {
+            max-width: 191px;
+        }
+    }
+
+    @media (max-width: 1020px) {
+        order: -1;
+        margin-bottom: 60px;
+    }    
+
+    @media (max-width: 540px) {
+        ${PulseWrapper} {
+            width: 218px;
+            height: 218px;
+        }
+
+        ${PulseItem} {
+            width: 218px;
+            height: 218px;
+        }
     }
 `

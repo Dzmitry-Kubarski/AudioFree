@@ -31,11 +31,9 @@ export default Contacts
 const Wrapper = styled.div`
     display: flex;
     align-items: center;
-
-    margin-bottom: 20px; // d
 `
 
-const IconWrap = styled.div`
+export const IconWrap = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;

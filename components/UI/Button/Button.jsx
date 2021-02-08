@@ -96,5 +96,9 @@ const StyledButton = styled.a`
     ${props => props.large && css`
         min-height: 74px;
         font-size: 18px;
+
+        @media (max-width: 340px) {
+            font-size: 16px;
+        }
     `}
 `

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 // components
 import { Container } from '../../UI/Container/Container'
+import TitleSection from './../../UI/TitleSection/TitleSection'
 
 // utils
 import { guaranteesItems } from './guaranteesItems'
@@ -11,10 +12,10 @@ const GuaranteesSection = () => {
     return (
         <Wrapper>
             <Container>
-                <Title>
-                    Где выгодно купить качественные наушники?
-                    <span>Интернет-магазин AudioFree - магазин хороших покупок</span>
-                </Title>
+                <TitleSection
+                    subTitle='Где выгодно купить качественные наушники?'
+                    title='Интернет-магазин AudioShop - магазин хороших покупок'
+                />
 
                 <SubTitle>
                     Текст о том, что мы не просто так подбираем наушники, а ассортимент формируется исходя из спроса и новинок
@@ -50,20 +51,9 @@ export default GuaranteesSection
 const Wrapper = styled.section`
     padding-top: 100px;
     padding-bottom: 70px;
-`
 
-const Title = styled.h2`
-    font-weight: 300;
-    font-size: 44px;
-    color: #535353;
-    text-align: center;
-    margin-bottom: 30px;
-
-    span {
-        display: block;
-        font-weight: 700;
-        font-size: 44px;
-        color: #8b75c8;
+    @media (max-width: 540px) {
+        padding: 50px 0; 
     }
 `
 
@@ -71,12 +61,23 @@ const SubTitle = styled.p`
     font-size: 18px;
     line-height: 21px;
     text-align: center;
-    margin-bottom: 50px;    
+    margin-bottom: 50px;  
+
+    @media (max-width: 540px) {
+        font-size: 16px;
+    }  
 `
 
 const Inner = styled.div`
     display: flex;
     justify-content: space-between;
+    margin-left: -15px;
+    margin-right: -15px;
+
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 `
 
 const Card = styled.div`
@@ -87,6 +88,21 @@ const Card = styled.div`
     text-align: center;
     background: #fff;
     border-radius: 9px;
+    margin-left: 15px;
+    margin-right: 15px;  
+
+    @media (max-width: 768px) {
+        max-width: calc(50% - 30px);
+        margin-bottom: 45px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    @media (max-width: 540px) {
+        max-width: calc(100% - 30px);        
+    }
 `
 
 const CardWrap = styled.div`

@@ -7,7 +7,7 @@ import styled from 'styled-components'
 // components
 import { Container } from './../UI/Container/Container'
 import FooterCallback from './FooterCallback'
-import Contacts from './../UI/Contacts/Contacts'
+import Contacts, { IconWrap } from './../UI/Contacts/Contacts'
 import SocialLinks from './../UI/SocialLinks/SocialLinks'
 
 // utils
@@ -18,7 +18,7 @@ const Footer = () => {
         <Wrapper>
             <Container>
                 <Inner>
-                    <div>
+                    <Col className='accountFooter'>
                         <Title>Личный кабинет</Title>
                         <ul>
                             {accountItems.map((item) =>
@@ -30,9 +30,9 @@ const Footer = () => {
                             )}
                         </ul>
                         <FooterCallback />
-                    </div>
+                    </Col>
 
-                    <div>
+                    <Col className='categoriesFooter'>
                         <Title>Категории</Title>
                         <ul>
                             {categoriesItems.map((item) =>
@@ -43,9 +43,9 @@ const Footer = () => {
                                 </ListItem>
                             )}
                         </ul>
-                    </div>
+                    </Col>
 
-                    <div>
+                    <Col>
                         <Title>Магазин</Title>
                         <ul>
                             {shopItems.map((item) =>
@@ -56,12 +56,12 @@ const Footer = () => {
                                 </ListItem>
                             )}
                         </ul>
-                    </div>
+                    </Col>
 
-                    <div>
+                    <Col className='contacts'>
                         <Title>Контакты</Title>
 
-                        <ul className='contacts'>
+                        <ul>
                             <ContactItemWrap>
                                 <Contacts number='8 800 551-92-02' subTitle='Бесплатный звонок по РФ' phone />
                             </ContactItemWrap>
@@ -78,7 +78,7 @@ const Footer = () => {
                         <SocialWrap>
                             <SocialLinks />
                         </SocialWrap>
-                    </div>
+                    </Col>
                 </Inner>
             </Container>
         </Wrapper>
@@ -91,6 +91,10 @@ export default Footer
 const Wrapper = styled.footer`
     background: #251C41;
     padding-top: 70px;
+
+    @media (max-width: 540px) {
+        padding-top: 50px;
+    }
 `
 
 const Inner = styled.div`
@@ -99,12 +103,60 @@ const Inner = styled.div`
     justify-content: space-between;
     color: #fff;
     padding-bottom: 50px;
+
+    .categoriesFooter {
+        @media (max-width: 940px) {
+            display: none;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .accountFooter {
+            display: none;
+        } 
+
+        justify-content: space-evenly;  
+    }
+
+    @media (max-width: 540px) {
+        flex-direction: column;
+        align-items: center;  
+        text-align: center;
+
+        .contacts {
+           > ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    }
+   
+`
+
+const Col = styled.div`
+    @media (max-width: 540px) {  
+        width: 100%;
+        border-bottom: 1.5px solid #383050;
+        padding-bottom: 30px;
+
+        margin-bottom: 25px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }        
+    }     
 `
 
 const Title = styled.div`
     font-weight: 500;
     font-size: 18px;
     margin-bottom: 50px;
+
+    @media (max-width: 540px) {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
 `
 
 const ListItem = styled.li`
@@ -123,6 +175,10 @@ const ListLink = styled.a`
     &:hover {
         color: #97d413;
     }
+
+    @media (max-width: 540px) {
+        font-size: 16px;
+    }
 `
 
 const ContactItemWrap = styled.li`
@@ -131,8 +187,24 @@ const ContactItemWrap = styled.li`
     &:last-child {
         margin-bottom: 0;
     }
+
+    @media (max-width: 540px) {
+        ${IconWrap} {
+            display: none;
+        } 
+    }
+
+    
 `
 
 const SocialWrap = styled.div`
     padding-left: 55px;
+    margin-top: 20px;
+
+    @media (max-width: 540px) {
+        padding-left: 0px; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 `

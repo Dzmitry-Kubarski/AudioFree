@@ -11,44 +11,31 @@ import bgImg from '../../../images/intro/bg.png'
 // components
 import { Container } from '../../UI/Container/Container'
 import VariantsSlider from '../../UI/VariantsSlider/VariantsSlider'
+import TitleSection from './../../UI/TitleSection/TitleSection'
 
 const VariantsSection = () => {
     return (
-        <StyledWrapper>
+        <Wrapper>
             <Container>
-                <StyledTitle>
-                    Выберите свои наушники
-                    <span>Функциональные, комфортные, стильные</span>
-                </StyledTitle>
+                <TitleSection subTitle='Выберите свои наушники' title='Функциональные, комфортные, стильные' dark />
             </Container>
 
-            <div className="swiper-container">
+            <div className='swiper-container'>
                 <VariantsSlider data={variantsData} />
             </div>
-        </StyledWrapper>
+        </Wrapper>
     )
 }
 
 export default VariantsSection
 
 // styles
-const StyledWrapper = styled.section`
+const Wrapper = styled.section`
     padding: 100px 0px;
     background: url(${bgImg});
     background-color: ${vars.colorPurple};
-`
 
-const StyledTitle = styled.h2`
-    font-weight: 300;
-    font-size: 44px;
-    color: white;
-    text-align: center;
-    margin-bottom: 60px;
-
-    span {
-        display: block;
-        font-weight: 700;
-        font-size: 44px;
-        color: white;        
+    @media (max-width: 540px) {
+        padding: 50px 0;   
     }
 `
