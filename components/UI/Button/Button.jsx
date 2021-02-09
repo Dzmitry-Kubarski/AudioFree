@@ -1,22 +1,36 @@
+// core 
+import React from 'react'
+
 // libs
 import styled, { css } from 'styled-components'
 
 // utils
 import { vars } from '../../../styles/vars'
 
-const Button = ({ type = 'button', variant, full, medium, large, children }) => {
+const Button = React.forwardRef(({ type = 'button', variant, full, medium, large, children, onClick, href }, ref) => {
     return (
-        <StyledButton type={type} variant={variant} full={full} medium={medium} large={large}>
+        <StyledButton
+            type={type}
+            variant={variant}
+            full={full}
+            medium={medium}
+            large={large}
+            href={href}
+            onClick={onClick}
+            ref={ref}>
             {children}
         </StyledButton>
     )
-}
+})
 
 export default Button
 
 // styles
-const StyledButton = styled.button`
+const StyledButton = styled.a`
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 13px;
     font-weight: bold;
     border: none;
@@ -82,5 +96,9 @@ const StyledButton = styled.button`
     ${props => props.large && css`
         min-height: 74px;
         font-size: 18px;
+
+        @media (max-width: 340px) {
+            font-size: 16px;
+        }
     `}
 `

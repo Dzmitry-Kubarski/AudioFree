@@ -2,12 +2,16 @@
   "name": "audio-shop",
   "version": "0.1.0",
   "private": true,
+  "author": "Dzmitry Kubarski",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next export",
+    "deploy": "npm run build && npm run export"
   },
   "dependencies": {
+    "@react-hook/window-size": "^3.0.7",
     "bcrypt": "^5.0.0",
     "classnames": "^2.2.6",
     "jsonwebtoken": "^8.5.1",
@@ -19,7 +23,7 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-id-swiper": "^4.0.0",
-    "react-stars": "^2.2.5",
+    "react-rating": "^2.0.5",
     "styled-components": "^5.2.1",
     "swiper": "^6.4.10"
   }

@@ -1,3 +1,6 @@
+// core
+import Link from 'next/link'
+
 // libs
 import styled from 'styled-components'
 
@@ -26,7 +29,9 @@ const BannerSale = () => {
                     </BannerText>
 
                     <BannerBtnWrap>
-                        <Button variant='green' full medium>В каталог скидок</Button>
+                        <Link href="/about" passHref>
+                            <Button variant='green' full medium>В каталог скидок</Button>
+                        </Link>
                     </BannerBtnWrap>
                 </div>
             </BannerInner>

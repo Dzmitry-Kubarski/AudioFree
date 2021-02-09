@@ -1,25 +1,18 @@
 // libs
-import styled, { css } from 'styled-components'
-import ReactStars from 'react-stars'
-
-// utils
-import { vars } from '../../../styles/vars'
+import styled from 'styled-components'
+import Rating from 'react-rating'
 
 // icons
-import CheckedIcon from './../../SVG/CheckedIcon'
-import FavouritesIcon from './../../SVG/FavouritesIcon'
-import ComparisonIcon from './../../SVG/ComparisonIcon'
-
-// images
-import cardImg from '../../../images/models/img-1.png'
+import StarEmpty from './../../SVG/StarEmpty'
+import StarFull from './../../SVG/StarFull'
 
 // components
 import Button from './../Button/Button'
-import LabelSale from '../LabelSale/LabelSale'
-import LabelDays from './../LabelDays/LabelDays'
-import ButtonIcon from './../ButtonIcon/ButtonIcon'
+import CardHeader from './CardHeader'
+import CardLabelSale from './CardLabelSale'
+import CardLimitedDays from './CardLimitedDays'
 
-const Card = ({ variant = 'header' }) => {
+const Card = ({ variant = 'header', item }) => {
 
     const ratingChanged = (newRating) => {
         console.log(newRating)
@@ -28,73 +21,38 @@ const Card = ({ variant = 'header' }) => {
     return (
         <CardWrapper>
             <CardInner>
-                {variant === 'header' &&
-                    <CardHeader>
-                        <CardLabel>
-                            В наличии
-                            <CheckedIcon />
-                        </CardLabel>
-
-                        <CardBtnWrap>
-                            <ButtonIcon>
-                                <ComparisonIcon />
-                            </ButtonIcon>
-                        </CardBtnWrap>
-
-                        <CardBtnWrap>
-                            <ButtonIcon>
-                                <FavouritesIcon />
-                            </ButtonIcon>
-                        </CardBtnWrap>
-                    </CardHeader>}
-
-                {variant === 'sale' &&
-                    <CardLabelSaleWrap>
-                        <LabelSale>15%</LabelSale>
-                    </CardLabelSaleWrap>
-                }
-
-                {variant === 'limited' &&
-                    <CardLabelSaleWrap>
-                        <LabelDays days='50'>15%</LabelDays>
-                    </CardLabelSaleWrap>
-                }
+                {variant === 'header' && <CardHeader />}
+                {variant === 'sale' && <CardLabelSale count={item.discountCount} />}
+                {variant === 'limited' && <CardLabelSale count={item.discountCount} />}
 
                 <CardImgWrap>
-                    <img src={cardImg} alt="Наушники Bluetooth Baseus Encok D01 NGD01-09 (red)" />
+                    <img src={item.imgUrl} alt={item.title} />
                 </CardImgWrap>
 
                 <div>
-                    <CardTitle>Наушники Bluetooth Baseus Encok D01 NGD01-09 (red)</CardTitle>
+                    <CardTitle>{item.title}</CardTitle>
 
-                    {variant === 'sale' &&
-                        <CardText>
-                            Многие думают, что Lorem Ipsum - взятый с потолка
-                            псевдо-латинский набор слов, но это не совсем так.
-                        </CardText>}
+                    {variant === 'sale' && <CardText>{item.text}</CardText>}
 
                     {variant !== 'limited' &&
                         <CardRow>
-                            <ReactStars
-                                count={5}
+                            <Rating
+                                initialRating={item.ratingValue}
                                 onChange={ratingChanged}
-                                size={19}
-                                color1='#D4D4D4'
-                                color2='#FFC107'
+                                emptySymbol={<StarEmpty />}
+                                fullSymbol={<StarFull />}
                             />
-                            <CardPrice>1 950 ₽</CardPrice>
+
+                            <CardPrice>{item.price} ₽</CardPrice>
                         </CardRow>}
 
-                    {variant !== 'limited' && <CardBtns>
-                        <Button>Купить в 1 клик</Button>
-                        <Button variant='outline'>В корзину</Button>
-                    </CardBtns>}
+                    {variant !== 'limited' &&
+                        <CardBtns>
+                            <Button>Купить в 1 клик</Button>
+                            <Button variant='outline'>В корзину</Button>
+                        </CardBtns>}
 
-                    {variant === 'limited' &&
-                        <CardLimiedDays>
-                            <LabelDays days='50'>15%</LabelDays>
-                            <p>До конца акции <br /> на этот товар осталось:</p>
-                        </CardLimiedDays>}
+                    {variant === 'limited' && <CardLimitedDays countDay={item.daysCount} />}
                 </div>
             </CardInner>
 
@@ -110,7 +68,6 @@ const CardWrapper = styled.div`
     position: relative;
     z-index: 99;
     width: 100%;
-    max-width: 270px;
     background: #FFFFFF;
     border-radius: 9px;
 
@@ -119,64 +76,24 @@ const CardWrapper = styled.div`
     }   
 `
 
-const CardInner = styled.div`
+export const CardInner = styled.div`
     height: 100%;
     box-shadow: 0px 5px 18px rgba(0, 0, 0, 0.1);
     border-radius: 9px;
     padding: 12px 12px 25px;
 `
 
-const CardHeader = styled.div`
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-`
-
-const CardLabelSaleWrap = styled.div`
-    position: absolute;
-    right: 15px;
-    top: 15px;
-`
-
-const CardLabel = styled.div`
-    position: relative;
-    font-size: 12px;
-    color: ${vars.colorBlack};
-    text-align: center;
-    border: 1px solid #DCDCDC;
-    border-radius: 14px;
-    padding: 5px 12px 5px 25px;   
-    margin-right: auto;
-
-    svg {
-        position: absolute;
-        top: 50%;
-        left: 5px;
-        transform: translateY(-50%);
-        width: 14px;
-        height: 14px;
-    }
-`
-
-const CardBtnWrap = styled.div`
-    margin-right: 10px;
-
-    &:last-child {
-        margin-right: 0;
-    }
-`
-
-const CardImgWrap = styled.div`
+export const CardImgWrap = styled.div`
     width: 200px;
     height: 200px;
     text-align: center;
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;   
 `
 
-const CardTitle = styled.h3`
+export const CardTitle = styled.h3`
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
@@ -193,41 +110,33 @@ const CardTitle = styled.h3`
     }
 `
 
-const CardText = styled.p`
+export const CardText = styled.p`
     font-size: 12px;
     line-height: 14px;
     margin-top: 20px;
+    margin-bottom: 20px;
 `
 
-const CardRow = styled.div`
+export const CardRow = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: 450px) {
+        flex-direction: column;   
+    }
 `
 
-const CardPrice = styled.span`
+export const CardPrice = styled.span`
     font-weight: bold;
     font-size: 26px;
 `
 
-const CardBtns = styled.div`
+export const CardBtns = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 30px;
-`
-
-const CardLimiedDays = styled.div`
-    display: flex;
-    align-items: center;
-    border-top: 1px solid #ebebeb;
-    padding-top: 20px;
-    
-    p {
-        font-size: 12px;
-        line-height: 14px;
-        margin-left: 20px;
-    }
+    margin-top: 30px;   
 `
 
 const CardShadow = styled.div`

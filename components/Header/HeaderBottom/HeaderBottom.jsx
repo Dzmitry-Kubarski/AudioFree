@@ -21,9 +21,9 @@ const HeaderBottom = () => {
                 <StyledInner>
 
                     <StyledMenuBtnWrap>
-                        <StyledMenuBtn type='button'>
+                        <StyledMenuBtn>
                             <BurgerIcon />
-                            <span>Каталог товаров</span>
+                            <Link href='/products'><a>Каталог товаров</a></Link>
                         </StyledMenuBtn>
                     </StyledMenuBtnWrap>
 
@@ -56,7 +56,7 @@ const HeaderBottom = () => {
                     </StyledMenu>
 
                     <StyledLoginWrap>
-                        <Link href='/auth'>
+                        <Link href='/login'>
                             <StyledLogin>
                                 <AccountIcon />
                                 <span>Вход/Регистрация</span>
@@ -95,7 +95,7 @@ export const StyledMenuBtnWrap = styled.div`
     border-right: 1px solid #E7E7E7;
 `
 
-export const StyledMenuBtn = styled.button`
+export const StyledMenuBtn = styled.div`
     width: 100%;
     text-align: left;
     padding: 12px 0px;
@@ -109,7 +109,7 @@ export const StyledMenuBtn = styled.button`
         transition: all .2s linear;
     }
 
-    span {
+    span, a {
         font-weight: 500;
         font-size: 18px;
         color: ${vars.colorBlack};
@@ -117,7 +117,7 @@ export const StyledMenuBtn = styled.button`
     }
 
     &:hover {
-        span {
+        span, a {
             color: ${vars.colorGreen};
         }
 
@@ -194,6 +194,7 @@ export const StyledLogin = styled.a`
     align-items: center;
     justify-content: center;
     padding: 12px 0px;
+    cursor: pointer;
 
     svg {
         width: 18px;

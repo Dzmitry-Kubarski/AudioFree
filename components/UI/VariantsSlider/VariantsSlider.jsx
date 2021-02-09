@@ -7,7 +7,7 @@ import styled from 'styled-components'
 
 const VariantsSlider = ({ data }) => {
     const params = {
-        slidesPerView: 5,
+        slidesPerView: 'auto',
         spaceBetween: 0,
         grabCursor: true,
     }
@@ -41,17 +41,22 @@ const SlideTitle = styled.h3`
     color: #fff;
 `
 
-const SliderWrapper = styled.div`
+const SliderWrapper = styled.div`    
 
     .swiper-wrapper {
         padding-left: 30px;
-        padding-right: 0;
+        padding-right: 20px;
+
+        @media (max-width: 768px) {
+            padding-left: 15px;   
+        }
     }    
 `
 
 const SlideWrap = styled.div`
     position: relative;
     width: 100%;
+    min-height: 330px;
     max-width: 330px;
     min-height: 330px;
     border-radius: 5px;
@@ -108,6 +113,13 @@ const SlideWrap = styled.div`
             left: 40px;
         }
     }
+
+    @media (max-width: 450px) {
+        min-height: 297px;
+        max-width: 297px;
+        min-height: 297px; 
+        margin-right: 15px;
+    }
 `
 
 const SlideLink = styled.a`
@@ -115,4 +127,10 @@ const SlideLink = styled.a`
     width: 100%;
     max-width: 330px;
     min-height: 330px;
+
+    @media (max-width: 450px) {
+        min-height: 297px;
+        max-width: 297px;
+        min-height: 297px; 
+    }
 `

@@ -2,49 +2,49 @@
 import styled from 'styled-components'
 
 // utils
-import { vars } from '../../styles/vars'
+import { vars } from '../../../styles/vars'
 
 // images
-import itemImg from '../../images/intro/item-1.png'
-import introBg from '../../images/intro/bg.png'
+import itemImg from '../../../images/intro/item-1.png'
+import introBg from '../../../images/intro/bg.png'
 
 // components
-import { Container } from './../UI/Container/Container';
+import { Container } from '../../UI/Container/Container'
 
-const Intro = () => {
+const IntroSection = () => {
     return (
-        <StyledSection>
+        <Wrapper>
             <Container>
                 <div>
-                    <StyledSlide>
+                    <Slide>
                         <div>
-                            <StyledSlideTitle>Bestseller</StyledSlideTitle>
-                            <StyledSlideTitleImg src={itemImg} alt='Фото Hoco W22' />
+                            <SlideTitle>Bestseller</SlideTitle>
+                            <SlideTitleImg src={itemImg} alt='Фото Hoco W22' />
                         </div>
 
-                        <StyledProduct>
-                            <StyledProductSubtitle>Ваш выбор</StyledProductSubtitle>
-                            <StyledProductTitle>Hoco W22</StyledProductTitle>
-                            <StyledProductBtn type='button'>Купить</StyledProductBtn>
-                        </StyledProduct>
-                    </StyledSlide>
+                        <Product>
+                            <ProductSubtitle>Ваш выбор</ProductSubtitle>
+                            <ProductTitle>Hoco W22</ProductTitle>
+                            <ProductBtn type='button'>Купить</ProductBtn>
+                        </Product>
+                    </Slide>
                 </div>
             </Container>
-        </StyledSection>
+        </Wrapper>
     )
 }
 
-export default Intro
+export default IntroSection
 
 // styles
-const StyledSection = styled.section`
+const Wrapper = styled.section`
     position: relative;
     z-index: 0;
     background-image: url(${introBg});  
     background-color: ${vars.colorPurple};
 `
 
-const StyledSlide = styled.div`
+const Slide = styled.div`
     min-height: 705px;
     display: flex;
     align-items: center;
@@ -63,7 +63,7 @@ const StyledSlide = styled.div`
     }
 `
 
-const StyledSlideTitle = styled.h2`
+const SlideTitle = styled.h2`
     position: relative;
     font-size: 192px;
     font-weight: bold;
@@ -92,7 +92,7 @@ const StyledSlideTitle = styled.h2`
     }
 `
 
-const StyledSlideTitleImg = styled.img`
+const SlideTitleImg = styled.img`
     position: absolute;
     z-index: 10;
     top: 50%;
@@ -116,7 +116,7 @@ const StyledSlideTitleImg = styled.img`
     }
 `
 
-const StyledProduct = styled.div`
+const Product = styled.div`
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -124,7 +124,7 @@ const StyledProduct = styled.div`
     max-width: 590px;
     height: 100%;
     max-height: 570px;
-    border: 20px solid rgba(#fff, .07);
+    border: 20px solid rgba(255,255,255,.07);
     text-align: center;
 
     @media (max-width: 740px) {
@@ -137,7 +137,7 @@ const StyledProduct = styled.div`
     }
 `
 
-const StyledProductSubtitle = styled.span`
+const ProductSubtitle = styled.span`
     display: block;
     font-weight: bold;
     font-size: 24px;
@@ -151,7 +151,7 @@ const StyledProductSubtitle = styled.span`
     }
 `
 
-const StyledProductTitle = styled.h1`
+const ProductTitle = styled.h1`
     font-weight: bold;
     font-size: 64px;
     text-transform: uppercase;
@@ -163,7 +163,7 @@ const StyledProductTitle = styled.h1`
     }
 `
 
-const StyledProductBtn = styled.button`
+const ProductBtn = styled.button`
     width: 100%;
     max-width: 250px;
     font-weight: bold;
@@ -178,6 +178,7 @@ const StyledProductBtn = styled.button`
     margin-bottom: 20px;
     padding: 21px 0px;
     transition: all .2s linear;
+    cursor: pointer;
 
     &:hover {
         background: #fff;

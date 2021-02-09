@@ -38,9 +38,9 @@ const SearchInput = styled.input`
         color: #B3B3B3;
     }
 
-    @media (max-width: 768px) {
+    /* @media (max-width: 768px) {
         display: none;   
-    }
+    } */
 `
 
 const SearchBtn = styled.button`
@@ -52,15 +52,16 @@ const SearchBtn = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;    
-    transform: translateY(-50%);    
+    transform: translateY(-50%);
+    background: transparent;
 
     svg {
         width: 23px;
         height: 23px;
     }
 
-    @media (max-width: 768px) {
+    /* @media (max-width: 768px) {
         position: static;
         transform: none;   
-    }
+    } */
 `
