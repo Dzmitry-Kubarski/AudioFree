@@ -65,6 +65,7 @@ const Wrapper = styled.section`
     background: url(${backgroundImg});
     background-color: ${vars.colorPurple};
     padding-top: 45px;
+    overflow: hidden;
 
     @media (max-width: 1080px) {
         padding: 50px 0;

@@ -31,6 +31,7 @@ export const SubTitle = styled.h2`
     @media (max-width: 540px) {
         font-size: 34px; 
         font-size: 24px; 
+        line-height: 28px;
         margin-bottom: 25px;  
     }    
 `
@@ -39,4 +40,10 @@ const Title = styled.span`
     display: block;
     font-weight: 700;
     color: #8b75c8;
+
+    @media (max-width: 540px) {
+        font-weight: 500; 
+        margin-top: 5px; 
+        font-size: 22px;
+    }
 `

@@ -129,6 +129,10 @@ const SubTitle = styled.p`
         max-width: 100%;
         margin-bottom: 80px;
     }
+
+    @media (max-width: 375px) {        
+        margin-bottom: 40px;
+    }
 `
 
 const BtnWrap = styled.div`
@@ -176,6 +180,10 @@ const ImgBox = styled.div`
 
         @media (max-width: 650px) {
             top: 37.5%;
+        }  
+
+        @media (max-width: 375px) {
+            top: 42.5%;
         }        
     }
 
