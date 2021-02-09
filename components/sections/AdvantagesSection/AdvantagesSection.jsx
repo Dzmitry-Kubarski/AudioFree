@@ -49,6 +49,7 @@ const Wrapper = styled.section`
     background-repeat: no-repeat;
     padding-top: 100px;
     padding-bottom: 80px;
+    overflow: hidden;
 
     ${SubTitle} {
         margin-bottom: 80px;

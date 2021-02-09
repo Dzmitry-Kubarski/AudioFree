@@ -68,9 +68,13 @@ const Wrapper = styled.section`
     padding: 100px 0px;
     background: #F8F5FE;
 
-    @media (max-width: 540px) {
-        padding: 50px 0;
+    @media (max-width: 1220px) {
+        display: none;
     }
+
+    /* @media (max-width: 540px) {
+        padding: 50px 0;
+    } */
 `
 
 const Inner = styled.div`

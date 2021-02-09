@@ -14,7 +14,7 @@ const GuaranteesSection = () => {
             <Container>
                 <TitleSection
                     subTitle='Где выгодно купить качественные наушники?'
-                    title='Интернет-магазин AudioShop - магазин хороших покупок'
+                    title='Интернет-магазин AudioShop магазин хороших покупок'
                 />
 
                 <SubTitle>
