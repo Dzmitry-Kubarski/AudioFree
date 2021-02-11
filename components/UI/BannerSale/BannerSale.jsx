@@ -57,7 +57,7 @@ const BannerInner = styled.div`
     height: 100%;
     box-shadow: 0 5px 18px rgb(0 0 0 / 10%);
     border-radius: 9px;
-    padding: 35px 25px;
+    padding: 25px 25px;
 `
 
 const BannerImgWrap = styled.div`
@@ -65,7 +65,6 @@ const BannerImgWrap = styled.div`
     height: 195px;
     text-align: center;
     overflow: hidden;
-    margin-left: auto;
     margin-right: auto;
 `
 
