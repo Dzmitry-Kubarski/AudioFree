@@ -136,7 +136,7 @@ export const CardBtns = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 30px;   
+    margin-top: 24px;   
 `
 
 const CardShadow = styled.div`
