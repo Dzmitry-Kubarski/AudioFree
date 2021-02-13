@@ -1,8 +1,6 @@
-// libs
 import styled from 'styled-components'
 
-// icons
-import SearchIcon from './../../SVG/SearchIcon'
+import SearchIcon from '@/SVG/SearchIcon'
 
 const Search = () => {
     return (
@@ -18,7 +16,6 @@ const Search = () => {
 
 export default Search
 
-// styles
 const SearchWrapper = styled.div`
     position: relative;
     width: 100%;

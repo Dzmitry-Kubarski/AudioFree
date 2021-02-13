@@ -1,19 +1,15 @@
-// core
 import { useEffect, useState } from 'react'
 
-// libs
 import styled from 'styled-components'
 import Swiper from 'react-id-swiper'
 import { useWindowSize } from '@react-hook/window-size'
 
-// components
-import { Container } from '../../UI/Container/Container'
-import BannerSale from '../../UI/BannerSale/BannerSale'
-import Card, { CardImgWrap, CardBtns, CardTitle, CardText, CardPrice } from '../../UI/Card/Card'
-import TitleSection from './../../UI/TitleSection/TitleSection'
-import PointerSwiper from './../../UI/PointerSwiper/PointerSwiper'
+import { Container } from '@/UI/Container/Container'
+import BannerSale from '@/UI/BannerSale/BannerSale'
+import TitleSection from '@/UI/TitleSection/TitleSection'
+import PointerSwiper from '@/UI/PointerSwiper/PointerSwiper'
+import Card, { CardImgWrap, CardBtns, CardTitle, CardText, CardPrice } from '@/UI/Card/Card'
 
-// utils
 import { cardListItems } from './cardListItems'
 
 const SaleSection = () => {
@@ -67,7 +63,6 @@ const SaleSection = () => {
 
 export default SaleSection
 
-// styles
 const Wrapper = styled.section`
     padding: 100px 0;
 

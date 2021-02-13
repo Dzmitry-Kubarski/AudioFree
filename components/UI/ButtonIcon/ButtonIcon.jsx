@@ -1,4 +1,3 @@
-// libs
 import styled from 'styled-components'
 
 const ButtonIcon = ({ children }) => {
@@ -11,7 +10,6 @@ const ButtonIcon = ({ children }) => {
 
 export default ButtonIcon
 
-// styles
 const ButtonIconWrapper = styled.button`
     width: 33px;
     height: 33px;

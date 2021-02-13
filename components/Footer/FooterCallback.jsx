@@ -1,11 +1,8 @@
-// libs
 import styled from 'styled-components'
 
-// utils
-import { vars } from '../../styles/vars'
+import { vars } from 'styles/vars'
 
-// icons
-import ArrowRightIcon from './../SVG/ArrowRightIcon'
+import ArrowRightIcon from '@/SVG/ArrowRightIcon'
 
 const FooterCallback = () => {
     return (
@@ -24,8 +21,6 @@ const FooterCallback = () => {
 }
 
 export default FooterCallback
-
-// styles
 
 const Wrapper = styled.div`
     margin-top: 50px;

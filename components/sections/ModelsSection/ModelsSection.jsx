@@ -1,20 +1,16 @@
-// libs 
 import styled from 'styled-components'
 import Swiper from 'react-id-swiper'
 
-// components
-import Tabs, { TabsList, TabsItem } from '../../UI/Tabs/Tabs'
-import Card, { CardBtns, CardPrice, CardInner, CardTitle, CardImgWrap } from '../../UI/Card/Card'
-import { Container } from '../../UI/Container/Container'
-import PointerSwiper from './../../UI/PointerSwiper/PointerSwiper'
-import TitleSection from './../../UI/TitleSection/TitleSection'
-import { CardHeaderWrap } from '../../UI/Card/CardHeader'
+import Tabs, { TabsList, TabsItem } from '@/UI/Tabs/Tabs'
+import Card, { CardBtns, CardPrice, CardInner, CardTitle, CardImgWrap } from '@/UI/Card/Card'
+import { Container } from '@/UI/Container/Container'
+import PointerSwiper from '@/UI/PointerSwiper/PointerSwiper'
+import TitleSection from '@/UI/TitleSection/TitleSection'
+import { CardHeaderWrap } from '@/UI/Card/CardHeader'
 
-// utils
 import { cardListItems } from './cardListItems'
 
 const ModelsSection = () => {
-
     const params = {
         slidesPerView: 'auto',
         spaceBetween: 0,
@@ -60,7 +56,6 @@ const ModelsSection = () => {
 
 export default ModelsSection
 
-// styles
 const Wrapper = styled.section`
     padding: 100px 0;
 

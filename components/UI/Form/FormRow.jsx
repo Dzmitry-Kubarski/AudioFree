@@ -1,4 +1,3 @@
-// libs
 import styled from 'styled-components'
 
 export const FormRow = styled.div`

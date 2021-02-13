@@ -1,19 +1,15 @@
-// libs
 import styled from 'styled-components'
 
-// images
-import background from '../../../images/intro/bg.png'
-import productImg from '../../../images/advantages/img-1.png'
+import background from 'images/intro/bg.png'
+import productImg from 'images/advantages/img-1.png'
 
-// utils
-import { vars } from '../../../styles/vars'
+import { vars } from 'styles/vars'
 import { dataItems } from './dataAdvantages'
 
-// components
-import { Container } from '../../UI/Container/Container'
+import { Container } from '@/UI/Container/Container'
 import AdvantagesItem, { ItemWrapper, ItemCircle, ItemNumber } from './AdvantagesItem'
-import Pulse, { PulseWrapper, PulseItem } from '../../UI/Pulse/Pulse'
-import TitleSection, { SubTitle } from './../../UI/TitleSection/TitleSection'
+import Pulse, { PulseWrapper, PulseItem } from '@/UI/Pulse/Pulse'
+import TitleSection, { SubTitle } from '@/UI/TitleSection/TitleSection'
 
 const AdvantagesSection = () => {
     return (

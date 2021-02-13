@@ -1,17 +1,13 @@
-// core
 import Link from 'next/link'
 import { useState } from 'react'
 
-// libs
 import styled from 'styled-components'
 import Rating from 'react-rating'
 
-// utils
-import { vars } from '../../../styles/vars'
+import { vars } from 'styles/vars'
 
-// icons
-import StarEmpty from './../../SVG/StarEmpty'
-import StarFull from './../../SVG/StarFull'
+import StarEmpty from '@/SVG/StarEmpty'
+import StarFull from '@/SVG/StarFull'
 
 const CardMini = ({ item }) => {
     const [value, setValue] = useState(3)
@@ -28,7 +24,7 @@ const CardMini = ({ item }) => {
                 </CardImgWrap>
 
                 <div>
-                    <Link href='/test'>
+                    <Link href='/products/product'>
                         <CardLink>
                             <CardTitleWrap>
                                 {item.title}

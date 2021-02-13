@@ -1,113 +1,19 @@
-// core
 import Link from 'next/link'
 
-// libs
 import styled from 'styled-components'
 
-// layout
-import MainLayout from '../../layout/main/MainLayout'
+import MainLayout from 'layout/main/MainLayout'
 
-// components
-import { Container } from '../../components/UI/Container/Container'
-import Card from './../../components/UI/Card/Card'
-import BannerSale from './../../components/UI/BannerSale/BannerSale'
-import Filter from './../../components/Filter/Filter'
-import BreadCrumbs from './../../components/UI/BreadCrumbs/BreadCrumbs'
-import FilterMobail from './../../components/Filter/FilterMobail'
+import { Container } from 'components/UI/Container/Container'
+import Card from '@/UI/Card/Card'
+import BannerSale from '@/UI/BannerSale/BannerSale'
+import Filter from 'components/Filter/Filter'
+import BreadCrumbs from '@/UI/BreadCrumbs/BreadCrumbs'
+import FilterMobail from 'components/Filter/FilterMobail'
 
-// sections
-import QuestionsSection from './../../components/sections/QuestionsSection/QuestionsSection'
+import QuestionsSection from '@/sections/QuestionsSection/QuestionsSection'
 
-// mock-data
-const cardListItems = [
-    {
-        id: '1',
-        title: 'Наушники Bluetooth Baseus Encok D01 NGD01-01',
-        imgUrl: '/models/img-1.png',
-        ratingValue: 4,
-        price: '1950',
-    },
-
-    {
-        id: '2',
-        title: 'Наушники Bluetooth Baseus Encok D01 NGD01-02',
-        imgUrl: '/models/img-2.png',
-        ratingValue: 5,
-        price: '1750',
-    },
-
-    {
-        id: '3',
-        title: 'Наушники Bluetooth Baseus Encok D05 NGD01-03',
-        imgUrl: '/models/img-3.png',
-        ratingValue: 3,
-        price: '1450',
-    },
-
-    {
-        id: '4',
-        title: 'Наушники Bluetooth Baseus Encok D01 NGD01-04',
-        imgUrl: '/models/img-2.png',
-        ratingValue: 5,
-        price: '1750',
-    },
-
-    {
-        id: '5',
-        title: 'Наушники Bluetooth Baseus Encok D01 NGD01-05',
-        imgUrl: '/models/img-1.png',
-        ratingValue: 4,
-        price: '1950',
-    },
-
-    {
-        id: '6',
-        title: 'Наушники Bluetooth Baseus Encok D05 NGD01-06',
-        imgUrl: '/models/img-3.png',
-        ratingValue: 3,
-        price: '1450',
-    },
-
-    {
-        id: '7',
-        title: 'Наушники Bluetooth Baseus Encok D01 NGD01-07',
-        imgUrl: '/models/img-2.png',
-        ratingValue: 5,
-        price: '1750',
-    },
-
-    {
-        id: '8',
-        title: 'Наушники Bluetooth Baseus Encok D01 NGD01-08',
-        imgUrl: '/models/img-1.png',
-        ratingValue: 4,
-        price: '1950',
-    },
-
-    {
-        id: '9',
-        title: 'Наушники Bluetooth Baseus Encok D05 NGD01-09',
-        imgUrl: '/models/img-3.png',
-        ratingValue: 3,
-        price: '1450',
-    },
-
-    {
-        id: '10',
-        title: 'Наушники Bluetooth Baseus Encok D01 NGD01-10',
-        imgUrl: '/models/img-2.png',
-        ratingValue: 5,
-        price: '1750',
-    },
-
-    {
-        id: '11',
-        title: 'Наушники Bluetooth Baseus Encok D01 NGD01-11',
-        imgUrl: '/models/img-1.png',
-        ratingValue: 4,
-        price: '1950',
-    },
-]
+import { cardListItems } from 'mockData/cardList'
 
 const CatalogPage = () => {
     return (
@@ -175,7 +81,6 @@ const CatalogPage = () => {
 
 export default CatalogPage
 
-// styles
 const Section = styled.section`
     padding-top: 60px;
     padding-bottom: 100px;

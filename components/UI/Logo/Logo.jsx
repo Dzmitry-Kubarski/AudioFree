@@ -1,11 +1,8 @@
-// core
 import Link from 'next/link'
 
-// libs
 import styled from 'styled-components'
 
-// images
-import logoSvg from '../../../images/logo.svg'
+import logoSvg from 'images/logo.svg'
 
 const Logo = ({ full }) => {
     return (
@@ -24,7 +21,6 @@ const Logo = ({ full }) => {
 
 export default Logo
 
-// styles
 const LogoWrapper = styled.a`
     display: flex;
     align-items: center;

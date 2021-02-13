@@ -1,17 +1,13 @@
-// libs
 import styled from 'styled-components'
 
-// utils
-import { vars } from '../../../styles/vars'
+import { vars } from 'styles/vars'
 import { variantsData } from './variantsData'
 
-// images
-import bgImg from '../../../images/intro/bg.png'
+import bgImg from 'images/intro/bg.png'
 
-// components
-import { Container } from '../../UI/Container/Container'
-import VariantsSlider from '../../UI/VariantsSlider/VariantsSlider'
-import TitleSection from './../../UI/TitleSection/TitleSection'
+import { Container } from '@/UI/Container/Container'
+import VariantsSlider from '@/UI/VariantsSlider/VariantsSlider'
+import TitleSection from '@/UI/TitleSection/TitleSection'
 
 const VariantsSection = () => {
     return (
@@ -29,7 +25,6 @@ const VariantsSection = () => {
 
 export default VariantsSection
 
-// styles
 const Wrapper = styled.section`
     padding: 100px 0px;
     background: url(${bgImg});

@@ -1,4 +1,3 @@
-// libs
 import styled from 'styled-components'
 
 const Pulse = () => {
@@ -14,7 +13,6 @@ const Pulse = () => {
 
 export default Pulse
 
-// styles
 export const PulseWrapper = styled.div`
     position: absolute;  
     top: 50%;

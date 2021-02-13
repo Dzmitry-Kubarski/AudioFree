@@ -1,5 +1,5 @@
-// libs
 import styled from 'styled-components'
+import React from 'react';
 
 const BreadCrumbs = ({ children }) => {
     return (
@@ -11,16 +11,10 @@ const BreadCrumbs = ({ children }) => {
 
 export default BreadCrumbs
 
-// styles
-const Wrapper = styled.ol`
-    display: flex;
-    align-items: center;
 
-    li {
-        font-size: 12px;
-        color: #B2B2B2;
-        margin-right: 4px;
-    }
+const Wrapper = styled.div`
+    display: flex;
+    align-items: center;   
 
     a {
         color: #B2B2B2; 
@@ -29,5 +23,11 @@ const Wrapper = styled.ol`
         &:hover {
             color: #97D413;         
         }
+    }
+
+    span {
+        font-size: 12px;
+        color: #B2B2B2;
+        margin-right: 4px;
     }
 `

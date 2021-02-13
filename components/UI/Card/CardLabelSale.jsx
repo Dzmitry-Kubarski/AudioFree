@@ -1,20 +1,17 @@
-// libs
 import styled from 'styled-components'
 
-// components
-import LabelSale from './../LabelSale/LabelSale'
+import LabelSale from '@/UI/Labels/LabelSale/LabelSale'
 
 const CardLabelSale = ({ count }) => {
     return (
         <CardLabelSaleWrap>
-            <LabelSale>-{count}%</LabelSale>
+            <LabelSale count={count} />
         </CardLabelSaleWrap>
     )
 }
 
 export default CardLabelSale
 
-// styles
 const CardLabelSaleWrap = styled.div`
     position: absolute;
     right: 15px;

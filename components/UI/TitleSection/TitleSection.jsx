@@ -1,4 +1,3 @@
-// libs
 import styled, { css } from 'styled-components'
 
 const TitleSection = ({ subTitle, title, dark }) => {
@@ -12,7 +11,6 @@ const TitleSection = ({ subTitle, title, dark }) => {
 
 export default TitleSection
 
-// styles
 export const SubTitle = styled.h2`
     font-weight: 300;
     font-size: 44px;

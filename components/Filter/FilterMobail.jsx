@@ -1,9 +1,7 @@
-// libs
 import styled from 'styled-components'
 
-// components
 // import { FilterHeader } from './Filter'
-import FilterBtnIcon from './../SVG/FilterBtnIcon'
+import FilterBtnIcon from '@/SVG/FilterBtnIcon'
 
 const FilterMobail = () => {
     return (
@@ -16,7 +14,6 @@ const FilterMobail = () => {
 
 export default FilterMobail
 
-// styles
 const Wrapper = styled.button`
     width: 100%;
     display: flex;

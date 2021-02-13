@@ -1,4 +1,3 @@
-// core
 import styled from 'styled-components'
 
 const Form = ({ title, subTitle, onSubmit, children }) => {
@@ -18,7 +17,6 @@ const Form = ({ title, subTitle, onSubmit, children }) => {
 
 export default Form
 
-// styles
 const FormWrapper = styled.div`
     position: relative;
     z-index: 99;

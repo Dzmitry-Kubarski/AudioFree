@@ -1,4 +1,3 @@
-// libs
 import styled from 'styled-components'
 
 const Сheckbox = ({ label, name, id, defaultChecked }) => {
@@ -20,7 +19,6 @@ const Сheckbox = ({ label, name, id, defaultChecked }) => {
 
 export default Сheckbox
 
-// styles
 const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   border: 0;
   clip: rect(0 0 0 0);

@@ -1,22 +1,17 @@
-// core
 import Link from 'next/link'
 
-// libs
 import styled from 'styled-components'
 import Swiper from 'react-id-swiper'
 
-// utils
 import { discountItems } from './discountItems'
 
-// components
-import { Container } from '../../UI/Container/Container'
-import Button from '../../UI/Button/Button'
-import Card, { CardImgWrap, CardTitle } from '../../UI/Card/Card'
-import PointerSwiper from './../../UI/PointerSwiper/PointerSwiper'
-import TitleSection from './../../UI/TitleSection/TitleSection'
+import { Container } from '@/UI/Container/Container'
+import Button from '@/UI/Button/Button'
+import Card, { CardImgWrap, CardTitle } from '@/UI/Card/Card'
+import PointerSwiper from '@/UI/PointerSwiper/PointerSwiper'
+import TitleSection from '@/UI/TitleSection/TitleSection'
 
 const DiscountSection = () => {
-
     const params = {
         slidesPerView: 'auto',
         spaceBetween: 0,
@@ -62,7 +57,6 @@ const DiscountSection = () => {
 
 export default DiscountSection
 
-// styles
 const Wrapper = styled.section`
     padding: 100px 0px;
 

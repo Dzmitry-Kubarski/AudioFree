@@ -1,15 +1,11 @@
-// libs
 import styled from 'styled-components'
 
-// utils
-import { vars } from '../../../styles/vars'
+import { vars } from 'styles/vars'
 
-// images
-import itemImg from '../../../images/intro/item-1.png'
-import introBg from '../../../images/intro/bg.png'
+import itemImg from 'images/intro/item-1.png'
+import introBg from 'images/intro/bg.png'
 
-// components
-import { Container } from '../../UI/Container/Container'
+import { Container } from '@/UI/Container/Container'
 
 const IntroSection = () => {
     return (
@@ -36,7 +32,6 @@ const IntroSection = () => {
 
 export default IntroSection
 
-// styles
 const Wrapper = styled.section`
     position: relative;
     z-index: 0;

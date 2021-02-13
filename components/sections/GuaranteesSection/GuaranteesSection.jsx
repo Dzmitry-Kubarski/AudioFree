@@ -1,11 +1,8 @@
-// libs
 import styled from 'styled-components'
 
-// components
-import { Container } from '../../UI/Container/Container'
-import TitleSection from './../../UI/TitleSection/TitleSection'
+import { Container } from '@/UI/Container/Container'
+import TitleSection from '@/UI/TitleSection/TitleSection'
 
-// utils
 import { guaranteesItems } from './guaranteesItems'
 
 const GuaranteesSection = () => {
@@ -47,7 +44,6 @@ const GuaranteesSection = () => {
 
 export default GuaranteesSection
 
-// styles
 const Wrapper = styled.section`
     padding-top: 100px;
     padding-bottom: 70px;
