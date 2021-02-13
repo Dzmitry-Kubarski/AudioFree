@@ -1,11 +1,8 @@
-// core 
 import React from 'react'
 
-// libs
 import styled, { css } from 'styled-components'
 
-// utils
-import { vars } from '../../../styles/vars'
+import { vars } from 'styles/vars'
 
 const Button = React.forwardRef(({ type = 'button', variant, full, medium, large, children, onClick, href }, ref) => {
     return (
@@ -25,7 +22,6 @@ const Button = React.forwardRef(({ type = 'button', variant, full, medium, large
 
 export default Button
 
-// styles
 const StyledButton = styled.a`
     position: relative;
     display: flex;

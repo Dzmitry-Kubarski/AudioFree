@@ -1,4 +1,3 @@
-// libs
 import styled from 'styled-components'
 
 const FormPolitics = () => {
@@ -11,7 +10,6 @@ const FormPolitics = () => {
 
 export default FormPolitics
 
-// styles
 const FormPoliticsText = styled.p`
     font-size: 12px;
     line-height: 14px;

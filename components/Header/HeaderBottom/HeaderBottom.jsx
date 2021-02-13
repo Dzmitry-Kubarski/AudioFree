@@ -1,18 +1,13 @@
-// core
 import Link from 'next/link'
 
-// libs
 import styled from 'styled-components'
 
-// utils
-import { vars } from '../../../styles/vars'
+import { vars } from 'styles/vars'
 
-// icons
-import BurgerIcon from '../../SVG/BurgerIcon'
-import AccountIcon from '../../SVG/AccountIcon'
+import BurgerIcon from '@/SVG/BurgerIcon'
+import AccountIcon from '@/SVG/AccountIcon'
 
-// components
-import { Container } from './../../UI/Container/Container'
+import { Container } from '@/UI/Container/Container'
 
 const HeaderBottom = () => {
     return (
@@ -72,7 +67,6 @@ const HeaderBottom = () => {
 
 export default HeaderBottom
 
-// styles
 export const StyledWrapper = styled.div`
     border: 1px solid #E7E7E7;
 `

@@ -1,8 +1,6 @@
-// layout
-import MainLayout from '../layout/main/MainLayout'
+import MainLayout from 'layout/main/MainLayout'
 
-// components
-import MockPage from '../components/mock'
+import MockPage from 'components/mock'
 
 const GuaranteesPage = () => {
     return (

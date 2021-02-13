@@ -1,26 +1,17 @@
-// core
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
-// libs
 import styled from 'styled-components'
 import { useWindowSize } from '@react-hook/window-size'
 
-// components
-import HeaderTop from '../Header/HeaderTop/HeaderTop'
-import HeaderBottom from '../Header/HeaderBottom/HeaderBottom'
-import Search from './../UI/Search/Search'
-import { Container } from '../UI/Container/Container'
-import Contacts from './../UI/Contacts/Contacts'
+import HeaderTop from './HeaderTop/HeaderTop'
+import HeaderBottom from './HeaderBottom/HeaderBottom'
+import Search from '@/UI/Search/Search'
+import { Container } from '@/UI/Container/Container'
+import Contacts from '@/UI/Contacts/Contacts'
 import HeaderControl from './HeaderControl'
 
-// icons
-import ComparisonIcon from './../SVG/ComparisonIcon'
-import FavouritesIcon from './../SVG/FavouritesIcon'
-import CartIcon from './../SVG/CartIcon'
-import PhoneIcon from './../SVG/PhoneIcon'
-import BurgerIcon from './../SVG/BurgerIcon'
-import SearchIcon from './../SVG/SearchIcon'
+import BurgerIcon from '@/SVG/BurgerIcon'
+import SearchIcon from '@/SVG/SearchIcon'
 
 const Header = () => {
     const [width] = useWindowSize()
@@ -74,7 +65,6 @@ const Header = () => {
 
 export default Header
 
-// styles
 const HeaderWrapper = styled.header`
     min-height: 80px;
     background-color: #fff;

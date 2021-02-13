@@ -1,20 +1,15 @@
-// core
 import Link from 'next/link'
 
-// libs
 import styled from 'styled-components'
 
-// utils
-import { vars } from '../../../styles/vars'
+import { vars } from 'styles/vars'
 
-// components
-import Pulse, { PulseWrapper, PulseItem } from '../../UI/Pulse/Pulse'
-import { Container } from '../../UI/Container/Container'
-import Button from '../../UI/Button/Button'
+import Pulse, { PulseWrapper, PulseItem } from '@/UI/Pulse/Pulse'
+import { Container } from '@/UI/Container/Container'
+import Button from '@/UI/Button/Button'
 
-// images
-import backgroundImg from '../../../images/intro/bg.png'
-import imgBox from '../../../images/consultant/img-box.png'
+import backgroundImg from 'images/intro/bg.png'
+import imgBox from 'images/consultant/img-box.png'
 
 const ConsultantSection = () => {
     return (
@@ -60,7 +55,6 @@ const ConsultantSection = () => {
 
 export default ConsultantSection
 
-// styles
 const Wrapper = styled.section`
     background: url(${backgroundImg});
     background-color: ${vars.colorPurple};

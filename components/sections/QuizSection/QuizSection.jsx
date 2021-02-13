@@ -1,19 +1,14 @@
-// core
 import Link from 'next/link'
 
-// libs
 import styled from 'styled-components'
 
-// utils
-import { vars } from '../../../styles/vars'
+import { vars } from 'styles/vars'
 
-// images
-import backgroundImg from '../../../images/intro/bg.png'
-import imgBox from '../../../images/quiz/img-box.png'
+import backgroundImg from 'images/intro/bg.png'
+import imgBox from 'images/quiz/img-box.png'
 
-// components
-import { Container } from '../../UI/Container/Container'
-import Button from '../../UI/Button/Button'
+import { Container } from '@/UI/Container/Container'
+import Button from '@/UI/Button/Button'
 
 const QuizSection = () => {
     return (
@@ -58,7 +53,6 @@ const QuizSection = () => {
 
 export default QuizSection
 
-// styles
 const Wrapper = styled.section`
     background: url(${backgroundImg});
     background-color: ${vars.colorPurple};

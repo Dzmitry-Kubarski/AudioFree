@@ -1,17 +1,13 @@
-// core
 import Link from 'next/link'
 
-// libs
 import styled from 'styled-components'
 
-// utils
-import { vars } from '../../styles/vars'
+import { vars } from 'styles/vars'
 
-// icons
-import ComparisonIcon from './../SVG/ComparisonIcon'
-import FavouritesIcon from './../SVG/FavouritesIcon'
-import CartIcon from './../SVG/CartIcon'
-import PhoneIcon from './../SVG/PhoneIcon'
+import ComparisonIcon from '@/SVG/ComparisonIcon'
+import FavouritesIcon from '@/SVG/FavouritesIcon'
+import CartIcon from '@/SVG/CartIcon'
+import PhoneIcon from '@/SVG/PhoneIcon'
 
 const HeaderControl = () => {
     return (
@@ -55,7 +51,6 @@ const HeaderControl = () => {
 
 export default HeaderControl
 
-// styles
 const Control = styled.div`
     display: flex;
     align-items: center; 

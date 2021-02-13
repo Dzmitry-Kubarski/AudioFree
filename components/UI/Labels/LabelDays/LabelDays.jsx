@@ -1,4 +1,3 @@
-// libs
 import styled from 'styled-components'
 
 const LabelDays = ({ days }) => {
@@ -12,7 +11,6 @@ const LabelDays = ({ days }) => {
 
 export default LabelDays
 
-// styles
 const LabelWrapper = styled.div`
     width: 54px;
     height: 54px;

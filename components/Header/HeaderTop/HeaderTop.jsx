@@ -1,15 +1,11 @@
-// core
 import Link from 'next/link'
 
-// libs
 import styled from 'styled-components'
 
-// components
-import Logo from '../../UI/Logo/Logo'
-import { Container } from './../../UI/Container/Container'
+import Logo from '@/UI/Logo/Logo'
+import { Container } from '@/UI/Container/Container'
 
-// utils
-import { vars } from '../../../styles/vars'
+import { vars } from 'styles/vars'
 
 const HeaderTop = () => {
     return (
@@ -45,7 +41,6 @@ const HeaderTop = () => {
 
 export default HeaderTop
 
-// styles
 export const StyledWrapper = styled.div`
     background-color: ${vars.colorDarkBlue};
 `

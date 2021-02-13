@@ -1,8 +1,6 @@
-// libs
 import styled from 'styled-components'
 
-// icons
-import SwaperIcon from './../../SVG/SwaperIcon'
+import SwaperIcon from '@/SVG/SwaperIcon'
 
 const PointerSwiper = () => {
     return (
@@ -14,7 +12,6 @@ const PointerSwiper = () => {
 
 export default PointerSwiper
 
-// styles
 const Wrapper = styled.div`
     width: 39px;
     height: 39px;

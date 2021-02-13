@@ -1,17 +1,13 @@
-// libs
 import styled from 'styled-components'
 
-const LabelSale = ({ children }) => {
+const LabelSale = ({ count }) => {
     return (
-        <LabelSaleWrapper>
-            {children}
-        </LabelSaleWrapper>
+        <LabelSaleWrapper>-{count}%</LabelSaleWrapper>
     )
 }
 
 export default LabelSale
 
-// styles
 const LabelSaleWrapper = styled.div`
     width: 46px;
     height: 46px;

@@ -1,16 +1,12 @@
-// core
 import Link from 'next/link'
 
-// libs
 import styled from 'styled-components'
 
-// components
-import { Container } from './../UI/Container/Container'
+import { Container } from '@/UI/Container/Container'
 import FooterCallback from './FooterCallback'
-import Contacts, { IconWrap } from './../UI/Contacts/Contacts'
-import SocialLinks from './../UI/SocialLinks/SocialLinks'
+import Contacts, { IconWrap } from '@/UI/Contacts/Contacts'
+import SocialLinks from '@/UI/SocialLinks/SocialLinks'
 
-// utils
 import { accountItems, categoriesItems, shopItems } from './listItems'
 
 const Footer = () => {
@@ -87,7 +83,6 @@ const Footer = () => {
 
 export default Footer
 
-// styles
 const Wrapper = styled.footer`
     background: #251C41;
     padding-top: 70px;

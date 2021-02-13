@@ -1,22 +1,19 @@
-// libs
 import styled from 'styled-components'
 
-// components
-import LabelDays from './../LabelDays/LabelDays'
+import LabelDays from '@/UI/Labels/LabelDays/LabelDays'
 
-const CardLimitedDays = ({ countDay }) => {
+const CardLabelDays = ({ countDay }) => {
     return (
-        <CardLimiedDaysWrap>
+        <LabelDaysWrap>
             <LabelDays days={countDay} />
             <p>До конца акции <br /> на этот товар осталось:</p>
-        </CardLimiedDaysWrap>
+        </LabelDaysWrap>
     )
 }
 
-export default CardLimitedDays
+export default CardLabelDays
 
-// styles
-const CardLimiedDaysWrap = styled.div`
+const LabelDaysWrap = styled.div`
     display: flex;
     align-items: center;
     border-top: 1px solid #ebebeb;

@@ -1,21 +1,16 @@
-// core
 import Link from 'next/link'
 
-// libs
 import styled from 'styled-components'
 
-// utils
-import { vars } from '../../../styles/vars'
+import { vars } from 'styles/vars'
 
-// icons
-import AppleIcon from './../../SVG/AppleIcon'
-import SamsungIcon from './../../SVG/SamsungIcon'
-import XiaomiIcon from './../../SVG/XiaomiIcon'
-import HuaweiIcon from './../../SVG/HuaweiIcon'
-import SaleIcon from './../../SVG/SaleIcon'
+import AppleIcon from '@/SVG/AppleIcon'
+import SamsungIcon from '@/SVG/SamsungIcon'
+import XiaomiIcon from '@/SVG/XiaomiIcon'
+import HuaweiIcon from '@/SVG/HuaweiIcon'
+import SaleIcon from '@/SVG/SaleIcon'
 
-// images
-import moreBtnImg from '../../../images/models/more.png'
+import moreBtnImg from 'images/models/more.png'
 
 const Tabs = () => {
     return (
@@ -78,7 +73,6 @@ const Tabs = () => {
 
 export default Tabs
 
-// styles
 const TabsWrapper = styled.div`
     width: 100%;
     flex-shrink: 0;

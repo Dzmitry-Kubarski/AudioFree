@@ -1,15 +1,12 @@
-// libs
 import styled, { css } from 'styled-components'
 
-// utils
-import { vars } from '../../../styles/vars'
+import { vars } from 'styles/vars'
 
-// icons
-import VkIcon from './../../SVG/VkIcon'
-import FbIcon from './../../SVG/FbIcon'
-import TelegramIcon from './../../SVG/TelegramIcon'
-import WhatsappIcon from './../../SVG/WhatsappIcon'
-import ViberIcon from './../../SVG/ViberIcon'
+import VkIcon from '@/SVG/VkIcon'
+import FbIcon from '@/SVG/FbIcon'
+import TelegramIcon from '@/SVG/TelegramIcon'
+import WhatsappIcon from '@/SVG/WhatsappIcon'
+import ViberIcon from '@/SVG/ViberIcon'
 
 const SocialLinks = ({ light }) => {
     return (
@@ -49,7 +46,6 @@ const SocialLinks = ({ light }) => {
 
 export default SocialLinks
 
-// styles
 const List = styled.ul`
     display: flex;
     align-items: center;    

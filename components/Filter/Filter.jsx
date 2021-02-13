@@ -1,15 +1,11 @@
-// core
 import { useState } from 'react'
 
-// libs
 import styled from 'styled-components'
 import { Range } from 'rc-slider'
 
-// components
-import Сheckbox from '../UI/Checkbox/Checkbox'
-import BannerSale from './../UI/BannerSale/BannerSale'
+import Сheckbox from '@/UI/Checkbox/Checkbox'
+import BannerSale from '@/UI/BannerSale/BannerSale'
 
-// utils
 import { categoriesNames, brandsNames, saleNames } from './mockData'
 
 const Filter = () => {
@@ -87,7 +83,6 @@ const Filter = () => {
 
 export default Filter
 
-// styles
 const FilterWrap = styled.div` 
     width: 270px; 
     max-width: 270px; 

@@ -1,16 +1,13 @@
-// libs
 import styled from 'styled-components'
 import Rating from 'react-rating'
 
-// icons
-import StarEmpty from './../../SVG/StarEmpty'
-import StarFull from './../../SVG/StarFull'
+import StarEmpty from '@/SVG/StarEmpty'
+import StarFull from '@/SVG/StarFull'
 
-// components
-import Button from './../Button/Button'
+import Button from '@/UI/Button/Button'
 import CardHeader from './CardHeader'
 import CardLabelSale from './CardLabelSale'
-import CardLimitedDays from './CardLimitedDays'
+import CardLabelDays from './CardLabelDays'
 
 const Card = ({ variant = 'header', item }) => {
 
@@ -52,7 +49,7 @@ const Card = ({ variant = 'header', item }) => {
                             <Button variant='outline'>В корзину</Button>
                         </CardBtns>}
 
-                    {variant === 'limited' && <CardLimitedDays countDay={item.daysCount} />}
+                    {variant === 'limited' && <CardLabelDays countDay={item.daysCount} />}
                 </div>
             </CardInner>
 
@@ -63,7 +60,6 @@ const Card = ({ variant = 'header', item }) => {
 
 export default Card
 
-// styles
 const CardWrapper = styled.div`
     position: relative;
     z-index: 99;

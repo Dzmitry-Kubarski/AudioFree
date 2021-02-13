@@ -1,10 +1,8 @@
-// libs
 import styled, { css } from 'styled-components'
 
-// icons
-import PhoneIcon from '../../SVG/PhoneIcon'
-import GeoIcon from '../../SVG/GeoIcon'
-import EmailIcon from '../../SVG/EmailIcon'
+import PhoneIcon from '@/SVG/PhoneIcon'
+import GeoIcon from '@/SVG/GeoIcon'
+import EmailIcon from '@/SVG/EmailIcon'
 
 const Contacts = ({ phone, geo, email, subTitle, title, number, darkIcon, shadow }) => {
     return (
@@ -27,7 +25,6 @@ const Contacts = ({ phone, geo, email, subTitle, title, number, darkIcon, shadow
 
 export default Contacts
 
-// styles
 const Wrapper = styled.div`
     display: flex;
     align-items: center;

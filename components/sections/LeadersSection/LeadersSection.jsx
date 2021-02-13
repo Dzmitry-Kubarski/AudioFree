@@ -1,22 +1,17 @@
-// core
 import Link from 'next/link'
 
-// libs
 import styled from 'styled-components'
 import Swiper from 'react-id-swiper'
 
-// utils
 import { cardItems } from './cardItems'
 
-// components
-import { Container } from '../../UI/Container/Container'
-import Button from '../../UI/Button/Button'
-import CardMini from '../../UI/Card/CardMini'
-import TitleSection from './../../UI/TitleSection/TitleSection'
-import PointerSwiper from './../../UI/PointerSwiper/PointerSwiper';
+import { Container } from '@/UI/Container/Container'
+import Button from '@/UI/Button/Button'
+import CardMini from '@/UI/Card/CardMini'
+import TitleSection from '@/UI/TitleSection/TitleSection'
+import PointerSwiper from '@/UI/PointerSwiper/PointerSwiper'
 
 const LeadersSection = () => {
-
     const params = {
         slidesPerView: 'auto',
         spaceBetween: 0,
@@ -62,7 +57,6 @@ const LeadersSection = () => {
 
 export default LeadersSection
 
-// styles
 const Wrapper = styled.section`
     background: #E6E1F2;
     padding: 90px 0px;

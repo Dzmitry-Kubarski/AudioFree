@@ -1,17 +1,12 @@
-// core
 import Link from 'next/link'
 
-// libs
 import styled from 'styled-components'
 
-// utils
-import { vars } from '../../../styles/vars'
+import { vars } from 'styles/vars'
 
-// images
-import bannerImg from '../../../images/discount/sale.png'
+import bannerImg from 'images/discount/sale.png'
 
-// components
-import Button from './../Button/Button';
+import Button from '@/UI/Button/Button'
 
 const BannerSale = () => {
     return (
@@ -43,7 +38,6 @@ const BannerSale = () => {
 
 export default BannerSale
 
-// styles
 const BannerWrapper = styled.div`
     position: relative;
     z-index: 99;

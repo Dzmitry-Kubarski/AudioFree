@@ -1,19 +1,14 @@
-// core
 import { useState } from 'react'
 import Link from 'next/link'
 
-// utils
-import { vars } from '../../../styles/vars'
+import { vars } from 'styles/vars'
 import { contentItems } from './contentItems'
 import { tabsNames } from './tabsNames'
 
-// libs
 import styled from 'styled-components'
 
-// components
-import { Container } from '../../UI/Container/Container'
-import PointerSwiper from './../../UI/PointerSwiper/PointerSwiper'
-import TitleSection from './../../UI/TitleSection/TitleSection';
+import { Container } from '@/UI/Container/Container'
+import TitleSection from '@/UI/TitleSection/TitleSection'
 
 const QuestionsSection = () => {
     const [activeTab, setActiveTab] = useState(0)
@@ -63,31 +58,22 @@ const QuestionsSection = () => {
 
 export default QuestionsSection
 
-// styles
 const Wrapper = styled.section`
     padding: 100px 0px;
     background: #F8F5FE;
 
     @media (max-width: 1220px) {
         display: none;
-    }
-
-    /* @media (max-width: 540px) {
-        padding: 50px 0;
-    } */
+    }    
 `
 
-const Inner = styled.div`
+export const Inner = styled.div`
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-
-    @media (max-width: 1220px) {
-        flex-wrap: wrap;
-    }
+    align-items: flex-start;    
 `
 
-const Tabs = styled.ul`
+export const Tabs = styled.ul`
     width: 100%;
     max-width: 495px;
     background: #fefdff;
@@ -100,7 +86,7 @@ const Tabs = styled.ul`
     } 
 `
 
-const TabsBtn = styled.button`
+export const TabsBtn = styled.button`
     display: block;
     width: 100%;
     font-size: 16px;
@@ -114,7 +100,7 @@ const TabsBtn = styled.button`
     padding-right: 15px;
 `
 
-const TabsItem = styled.li`
+export const TabsItem = styled.li`
     position: relative;
     border-radius: 9px;
 
@@ -153,7 +139,7 @@ const TabsItem = styled.li`
     }
 `
 
-const Content = styled.div`
+export const Content = styled.div`
     min-height: 415px;
     height: 100%;
     background: #fff;
@@ -166,7 +152,7 @@ const Content = styled.div`
     } 
 `
 
-const ContentInner = styled.div`
+export const ContentInner = styled.div`
     display: none;
 
     &.active {
@@ -174,14 +160,14 @@ const ContentInner = styled.div`
     }
 `
 
-const ContentTitle = styled.div`
+export const ContentTitle = styled.div`
     font-weight: bold;
     font-size: 22px;
     line-height: 30px;
     margin-bottom: 40px;
 `
 
-const ContentText = styled.p`
+export const ContentText = styled.p`
     font-size: 16px;
     line-height: 30px;
     margin-bottom: 40px;
@@ -191,22 +177,10 @@ const ContentText = styled.p`
     }
 `
 
-const ContentLink = styled.a`
+export const ContentLink = styled.a`
     font-weight: bold;
     font-size: 16px;
     text-decoration: underline;
     color: ${vars.colorPurple};
     cursor: pointer;
-`
-
-const PointerSwiperWrap = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    display: none;
-
-    @media (max-width: 1220px) {
-        display: flex;   
-        margin-bottom: 15px;
-    }
 `

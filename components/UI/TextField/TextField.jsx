@@ -1,8 +1,6 @@
-// libs
 import styled from 'styled-components'
 
-// utils
-import { vars } from '../../../styles/vars'
+import { vars } from 'styles/vars'
 
 const TextField = ({ type = 'text', name, value, onChange, placeholder }) => {
     return (
@@ -18,7 +16,6 @@ const TextField = ({ type = 'text', name, value, onChange, placeholder }) => {
 
 export default TextField
 
-// styles
 const Input = styled.input`
     width: 100%;
     min-height: 60px;

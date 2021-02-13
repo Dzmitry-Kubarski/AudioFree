@@ -1,8 +1,6 @@
-// libs
 import styled, { css } from 'styled-components'
 
-// utils
-import { vars } from '../../../styles/vars'
+import { vars } from 'styles/vars'
 
 const AdvantagesItem = ({ right, item }) => {
     return (
@@ -21,7 +19,6 @@ const AdvantagesItem = ({ right, item }) => {
 
 export default AdvantagesItem
 
-// styles
 export const ItemCircle = styled.div`
     position: relative;
     display: flex;

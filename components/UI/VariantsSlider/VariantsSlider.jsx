@@ -1,7 +1,5 @@
-// core
 import Link from 'next/link'
 
-// libs
 import Swiper from 'react-id-swiper'
 import styled from 'styled-components'
 
@@ -31,7 +29,6 @@ const VariantsSlider = ({ data }) => {
 
 export default VariantsSlider
 
-// styles
 const SlideTitle = styled.h3`
     position: absolute;
     max-width: 145px;

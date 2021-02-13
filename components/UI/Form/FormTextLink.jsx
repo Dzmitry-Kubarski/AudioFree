@@ -1,11 +1,8 @@
-// core
 import Link from 'next/link'
 
-// libs
 import styled from 'styled-components'
 
-// utils
-import { vars } from '../../../styles/vars'
+import { vars } from 'styles/vars'
 
 const FormTextLink = ({ hrefUrl, text, textUrl }) => {
     return (
@@ -20,7 +17,6 @@ const FormTextLink = ({ hrefUrl, text, textUrl }) => {
 
 export default FormTextLink
 
-// styles
 const TextWrapper = styled.p`
     font-size: 16px;
     text-align: center;
